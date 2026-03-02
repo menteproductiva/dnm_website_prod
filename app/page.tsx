@@ -1,65 +1,303 @@
 import Image from "next/image";
+import { ArrowRightDown } from "./components/icons/icons";
+import { ArrowRightUp } from "./components/icons/icons";
+import { Crates } from "./components/icons/icons";
+import { Bullseye } from "./components/icons/icons";
+import { TripleConnection } from "./components/icons/icons";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main className="justify-center items-center bg-zinc-50 dark:bg-black min-h-screen font-sans">
+      <Hero />
+      <Introduction />
+      <Info />
+      <div className="bg-white/20 mx-auto my-10 w-3/4 h-0.5" />
+      <Branding
+        title="MARCA PERSONAL"
+        subtitle="Para líderes que necesitan dirección, no exposición"
+        text="La estrategia no es igual para todos. Definimos rutas según el tipo de decisión que tu marca debe tomar."
+        graphic="home/graphic1.svg"
+        link="/"
+      />
+      <div className="bg-white/20 mx-auto my-10 w-3/4 h-0.5" />
+      <Branding
+        title="MARCA EMPRESARIAL"
+        subtitle="Para empresas que necesitan estructura, no improvisación."
+        text="Negocios en crecimiento que requieren coherencia, alineación interna y dirección estratégica."
+        graphic="home/graphic2.svg"
+        link="/"
+      />
+    </main>
   );
 }
+
+const Hero = () => {
+  return (
+    <section className="relative flex flex-col justify-around items-center px-5 py-20 w-screen h-screen">
+      {/* ---------- Glow Background ----------   */}
+      <svg className="absolute w-full h-full object-fill">
+        <defs>
+          <radialGradient
+            id="heroGlow"
+            cx="50%"
+            cy="50%"
+            r="50%"
+            fx="50%"
+            fy="50%"
+          >
+            <stop offset="0%" stopColor="white" stopOpacity=".5" />
+            <stop offset="40%" stopColor="#9f6637" stopOpacity="0.5" />
+            <stop offset="100%" stopColor="transparent" stopOpacity="0.5" />
+          </radialGradient>
+        </defs>
+
+        <circle cx="100%" cy="45%" r="50%" fill="url(#heroGlow)" opacity={0.8}>
+          <animate
+            attributeName="r"
+            from="0"
+            to="50%"
+            dur="2s"
+            repeatCount="1"
+          />
+        </circle>
+      </svg>
+      {/* ---------- Hero Title ----------   */}
+      <div className="flex flex-col gap-10">
+        <p className="flex flex-row gap-5 w-full align-middle">
+          <Image
+            src="/branding/isotipo.svg"
+            alt="isotipo.svg"
+            height={200}
+            width={200}
+            className="opacity-10 w-1/2 object-contain"
+          />
+          <Image
+            src="/branding/name_logo2.svg"
+            alt="isotipo.svg"
+            height={300}
+            width={300}
+            className="my-auto w-1/2 object-contain"
+          />
+        </p>
+        <p className="text-white text-2xl">
+          CONSULTORÍA & ESTRATEGIA PARA MARCAS PERSONALES & EMPRESARIALES
+        </p>
+      </div>
+
+      {/* ----------  Introduction ----------   */}
+      <div className="flex flex-col gap-10 w-full h-1/3 text-white">
+        {/* PERSONAL  */}
+        <div className="flex flex-col gap-6">
+          <p className="flex flex-col w-full">
+            <span className="w-full font-semibold text-xl">
+              Tu nombre ya tiene peso
+            </span>
+            <span className="opacity-80 w-full text-lg">
+              Ahora necesitas dirección
+            </span>
+          </p>
+          <div className="flex flex-row gap-3 w-full">
+            <p className="text-lg">
+              <span className="font-semibold text-primary1-500">
+                MARCA PERSONAL
+              </span>
+              <span className="opacity-80 w-full"> para lideres</span>
+            </p>
+            <ArrowRightDown
+              color="#9f6637"
+              size={20}
+              className="my-auto"
+              strokeWidth={6}
+            />
+          </div>
+        </div>
+        {/* BUSINESS  */}
+        <div className="flex flex-col gap-6">
+          <p className="flex flex-col w-full">
+            <span className="w-full font-semibold text-xl">
+              Tu empresa está creciendo
+            </span>
+            <span className="opacity-80 w-full text-lg">
+              Tu empresa debe sostenerlo
+            </span>
+          </p>
+          <div className="flex flex-row gap-3 w-full">
+            <p className="text-lg">
+              <span className="font-semibold text-primary1-500">
+                MARCA EMPRESARIAL
+              </span>
+              <span className="opacity-80 w-full"> para empresas</span>
+            </p>
+            <ArrowRightDown
+              color="#9f6637"
+              className="my-auto"
+              strokeWidth={6}
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const Introduction = () => {
+  const bulletPoints = [
+    {
+      icon: <Crates strokeWidth={3} />,
+      title: "Diseño sin estrategia",
+    },
+    {
+      icon: <Bullseye strokeWidth={3} />,
+      title: "Marketing sin posicionamiento",
+    },
+    {
+      icon: <TripleConnection strokeWidth={3} />,
+      title: "Crecimiento sin estructura",
+    },
+  ];
+  return (
+    <section className="relative flex flex-col justify-around items-center px-5 py-20 w-screen h-screen">
+      {/* ---------- Glow Top ----------   */}
+      <svg className="absolute w-full h-full object-fill">
+        <defs>
+          <radialGradient
+            id="radialGlowIntro"
+            cx="50%"
+            cy="30%"
+            r="50%"
+            fx="50%"
+            fy="50%"
+          >
+            <stop offset="0%" stopColor="white" stopOpacity=".4" />
+            <stop offset="40%" stopColor="#9f6637" stopOpacity="0.5" />
+            <stop offset="100%" stopColor="transparent" stopOpacity="0.5" />
+          </radialGradient>
+          <linearGradient
+            id="linearGlowIntro"
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="0%"
+          >
+            <stop offset="0%" stopColor="transparent" stopOpacity="0" />
+            <stop offset="20%" stopColor="#9f6637" stopOpacity="0.5" />
+            <stop offset="50%" stopColor="white" stopOpacity="0.25" />
+            <stop offset="80%" stopColor="#9f6637" stopOpacity="0.5" />
+            <stop offset="100%" stopColor="transparent" stopOpacity="0" />
+          </linearGradient>
+        </defs>
+
+        <circle
+          cx="50%"
+          cy="0%"
+          r="30%"
+          fill="url(#radialGlowIntro)"
+          opacity={0.8}
+        ></circle>
+        <rect
+          x="0%"
+          y="0"
+          width="100%"
+          height="2"
+          fill="url(#linearGlowIntro)"
+          // fill="white"
+        />
+      </svg>
+
+      {/* ---------- Title ----------   */}
+      <div className="flex flex-col gap-7 w-full text-white">
+        <p className="font-semibold text-5xl"> El problema no es el diseño</p>
+        <p className="text-xl">
+          Muchas marcas invierten en identidad, marketing y contenido sin una
+          decisión estratégica clara.
+        </p>
+      </div>
+
+      {/* ---------- Decorative divisor ----------   */}
+      <div className="bg-primary1-500/30 mr-auto w-1/2 h-0.5"></div>
+
+      {/* ----------  Bullet Points ----------   */}
+      <div className="flex flex-col gap-10 w-full h-1/3 text-white">
+        {bulletPoints.map(({ title, icon }, index) => (
+          <p
+            key={`bulletPoint-${index}`}
+            className="flex flex-row gap-6 w-full"
+          >
+            <span className="bg-primary-500 p-2 border-2 border-primary1-500 rounded">
+              {icon}
+            </span>
+            <span className="my-auto w-full text-xl">{title}</span>
+          </p>
+        ))}
+      </div>
+
+      {/* ----------  Quote ----------   */}
+      <div className="flex flex-col gap-5 w-full font-bold text-2xl">
+        <p className="bg-clip-text bg-linear-to-r from-white to-white/10 w-fit text-transparent">
+          La dirección no se diseña.
+        </p>
+        <p className="bg-clip-text bg-linear-to-l from-white to-white/10 ml-auto w-fit text-transparent text-right">
+          Se define.
+        </p>
+      </div>
+    </section>
+  );
+};
+
+const Info = () => {
+  return (
+    <section className="relative flex flex-col justify-around items-center gap-10 px-5 py-20 w-full text-white">
+      <p className="opacity-60 w-full text-xl text-left">
+        SOLUCIONES ESTRATÉGICAS
+      </p>
+      <p className="font-semibold text-5xl"> ¿Quién necesita este orden? </p>
+      <p className="opacity-60 text-xl">
+        La estrategia no es igual para todos. Definimos rutas según el tipo de
+        decisión que tu marca debe tomar.
+      </p>
+    </section>
+  );
+};
+
+const Branding = ({
+  title,
+  subtitle,
+  text,
+  graphic,
+  link,
+}: {
+  title: string;
+  subtitle: string;
+  text: string;
+  graphic: string;
+  link: string;
+}) => {
+  return (
+    <section className="relative flex flex-col justify-around items-center gap-10 px-5 py-10 w-full text-white">
+      <p className="w-full text-primary1-500 text-3xl text-left">{title}</p>
+      <p className="font-semibold text-lg">{subtitle}</p>
+      <p className="opacity-60 text-xl">{text}</p>
+      <Image
+        src={graphic}
+        alt="isotipo.svg"
+        height={200}
+        width={200}
+        className="my-auto w-full object-contain"
+      />
+
+      {/* Black Gradient  */}
+      <div className="bottom-10 absolute bg-linear-to-b from-transparent to-black w-full h-1/2 to"></div>
+
+      <div className="bottom-10 z-10 absolute flex">
+        <Link
+          href={link}
+          className="flex flex-row gap-3 bg-black mt-auto px-10 py-5 border-2 border-primary1-500 rounded-xl"
+        >
+          <span className="my-auto">EXPLORAR RUTA</span>
+          <ArrowRightUp strokeWidth={4} className="my-auto" size={15} />
+        </Link>
+      </div>
+    </section>
+  );
+};
