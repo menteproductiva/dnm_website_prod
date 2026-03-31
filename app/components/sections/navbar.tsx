@@ -332,9 +332,11 @@ const LanguageButton = () => {
       <div
         className={` duration-500 flex flex-row gap-5 bg-primary1-500 hover:bg-opacity-80 lg:my-auto px-5 2xl:px-4 py-1 border border-primary2-100 2xl:border-2 rounded-full w-fit lg:h-full transition-all cursor-pointer ${showAnimation ? "opacity-100 " : "opacity-0"}`}
       >
-        <span className="my-auto w-fit h-fit font-bold align-middle">EN</span>
+        <span className="my-auto w-fit h-fit font-bold align-middle">
+          {!isEn ? "EN" : "ES"}
+        </span>
         <Image
-          src={usFlag}
+          src={!isEn ? usFlag : mxFlag}
           alt="language flag"
           width={20}
           height={20}
@@ -346,13 +348,15 @@ const LanguageButton = () => {
         className={`top-0  duration-500  absolute flex flex-row gap-5 bg-primary1-500 hover:bg-opacity-80 lg:my-auto px-5 2xl:px-4 py-1 border border-primary2-100 2xl:border-2 rounded-full w-fit lg:h-full transition-all cursor-pointer ${!showAnimation ? "opacity-100 " : "opacity-0"}`}
       >
         <Image
-          src={mxFlag}
+          src={isEn ? usFlag : mxFlag}
           alt="language flag"
           width={20}
           height={20}
           className="my-auto w-6 h-6"
         />
-        <span className="my-auto w-fit h-fit font-bold align-middle">ES</span>
+        <span className="my-auto w-fit h-fit font-bold uppercase align-middle">
+          {locale}
+        </span>
       </div>
     </div>
   );

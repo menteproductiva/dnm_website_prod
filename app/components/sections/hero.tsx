@@ -130,7 +130,7 @@ export const Hero = () => {
             {/* ----------  Introduction ----------   */}
             <div className="flex lg:flex-row flex-col gap-10 w-full h-fit md:h-1/3 lg:h-fit text-white">
               {/* PERSONAL  */}
-              <div className="flex flex-col gap-2 md:gap-6">
+              <div className="flex flex-col gap-2 md:gap-6 w-full">
                 <p className="flex flex-col w-full">
                   <span className="w-full font-semibold text-xl">
                     {t("sections_title.0")}
@@ -142,8 +142,7 @@ export const Hero = () => {
                 <div className="flex flex-row gap-3 w-full">
                   <p className="text-md md:text-lg">
                     <span className="font-semibold text-primary2-500">
-                      {t("sections_description1.0")}
-                      <br />
+                      {t("sections_description1.0")}{" "}
                     </span>
                     <span className="opacity-80 w-full">
                       {t("sections_description2.0")}
@@ -152,13 +151,13 @@ export const Hero = () => {
                   <ArrowRightDown
                     color="#9f6637"
                     size={20}
-                    className="mt-auto"
+                    className="my-auto"
                     strokeWidth={6}
                   />
                 </div>
               </div>
               {/* BUSINESS  */}
-              <div className="flex flex-col gap-2 md:gap-6">
+              <div className="flex flex-col gap-2 md:gap-6 w-full">
                 <p className="flex flex-col w-full">
                   <span className="w-full font-semibold text-xl">
                     {t("sections_title.1")}
@@ -170,8 +169,7 @@ export const Hero = () => {
                 <div className="flex flex-row gap-3 w-full">
                   <p className="text-md md:text-lg">
                     <span className="font-semibold text-primary2-500">
-                      {t("sections_description1.1")}
-                      <br />
+                      {t("sections_description1.1")}{" "}
                     </span>
                     <span className="opacity-80 w-full">
                       {t("sections_description2.1")}
@@ -179,7 +177,7 @@ export const Hero = () => {
                   </p>
                   <ArrowRightDown
                     color="#9f6637"
-                    className="mt-auto"
+                    className="my-auto"
                     strokeWidth={6}
                   />
                 </div>
