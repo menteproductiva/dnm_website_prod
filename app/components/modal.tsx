@@ -1,15 +1,22 @@
 "use client";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 
-export const Modal = () => {
-  const [isOpen, setIsOpen] = useState(true);
+export const Modal = ({
+  isVisible,
+  setIsVisible,
+}: {
+  isVisible: boolean;
+  setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
   const modalRef = useRef<HTMLElement>(null);
+  const t = useTranslations("home.welcome_window");
 
   // ---- When Modal is open, disable scroll ----
   useEffect(() => {
-    if (isOpen) {
+    if (isVisible) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "unset";
@@ -18,25 +25,25 @@ export const Modal = () => {
     return () => {
       document.body.style.overflow = "unset"; // Cleanup on unmount
     };
-  }, [isOpen]);
+  }, [isVisible]);
 
   // ---- Close Modal when "Esc" key is pressed ----
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setIsOpen(false);
+      if (e.key === "Escape") setIsVisible(false);
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
   // ---- Do not return anything if Modal is not open ----
-  if (!isOpen) return null;
+  if (!isVisible) return null;
 
   // ---- Close Modal if user clicks outside of it ----
   const handleBackdropClick = (e: React.MouseEvent) => {
     // If the click is on the backdrop (not the <section> or its children)
     if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
-      setIsOpen(false);
+      setIsVisible(false);
     }
   };
 
@@ -95,22 +102,27 @@ export const Modal = () => {
             className="w-1/4 lg:w-auto h-auto lg:h-full"
           />
         </p>
-        <p className="relative w-full font-bold text-center">
-          BIENVENIDO A DNM
-        </p>
+
+        <p className="relative w-full font-bold text-center">{t("title")}</p>
 
         <p className="relative flex flex-col gap-2">
           <span className="w-full text-center">
-            Esto lo estás viendo solo tú que asististe a la conferencia.
+            <span> {t("paragraph1.text1")}</span>
+            <span> {t("paragraph1.text2")}</span>
+            <span> {t("paragraph1.text3")}</span>
           </span>
           <span className="w-full text-center">
-            Cuando quieras comenzar a impulsar tu marca personal o de tu empresa
-            búscanos en este sitio: <br />{" "}
-            <span className="text-primary2-500">https://dnm.com </span>
+            <span> {t("paragraph2.text1")}</span>
+            <span> {t("paragraph2.text2")}</span>
+            <span> {t("paragraph2.text3")}</span>
+            <br />
+            <span className="text-primary2-500">{t("link")} </span>
           </span>
 
           <span className="w-full text-center">
-            Pero el regalo que te prometió el arquitecto José Garnica está aquí
+            <span> {t("paragraph3.text1")}</span>
+            <span> {t("paragraph3.text2")}</span>
+            <span> {t("paragraph3.text3")}</span>
           </span>
         </p>
 
@@ -119,15 +131,15 @@ export const Modal = () => {
             href="/"
             className="bg-primary2-500 md:mt-auto px-5 md:px-6 py-2 md:py-3 border-2 border-primary2-500 rounded-xl w-3/5 md:w-2/5 text-center"
           >
-            OBTENER REGALO
+            {t("btn_gift")}
           </Link>
           <span
             onClick={() => {
-              setIsOpen(false);
+              setIsVisible(false);
             }}
             className="px-5 md:px-6 py-2 md:py-3 border-2 border-primary2-500 rounded-xl w-3/5 md:w-2/5 text-center cursor-pointer"
           >
-            EXPLORAR DNM
+            {t("btn_explore")}
           </span>
         </p>
       </section>

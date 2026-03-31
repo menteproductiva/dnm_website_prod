@@ -1,0 +1,160 @@
+{
+  "Metadata": {
+    "title": "",
+    "description": "",
+    "keywords": ["", ""]
+  },
+
+  "home": {
+    "section_navbar": {
+      "options": {
+        "aboutUs": "About Us",
+        "solutions": "Solutions",
+        "solutionsList": ["Personal Branding", "Business Branding"],
+        "cases": "Cases",
+        "method": "Method",
+        "contact": "Contact"
+      },
+      "whatsappBtn": "Let’s chat",
+      "languageBtn": "EN"
+    },
+    "section_hero": {
+      "subtitle": "Personal and business branding strategy and consulting.",
+      "btn": "Know more",
+      "sections_title": ["Your name has traction", "Your business is growing"],
+      "sections_subtitle": [
+        "Now it needs direction.",
+        "Your brand must sustain it."
+      ],
+      "sections_description1": ["PERSONAL BRAND", "BUSINESS BRAND"],
+      "sections_description2": [
+        "for leaders and communicators",
+        "for businesses and companies"
+      ]
+    },
+    "welcome_window": {
+      "title": "Welcome to DNM",
+      "paragraph1": {
+        "text1": "This is",
+        "text2": "only for you",
+        "text3": ", who attended the conference."
+      },
+      "paragraph2": {
+        "text1": "When you want to start boosting your",
+        "text2": "personal brand",
+        "text3": "or your company's brand, find us on this site:"
+      },
+      "link": "https://dnm.com",
+      "paragraph3": {
+        "text1": "But the",
+        "text2": "gift",
+        "text3": "that architect José Garnica promised you is here:"
+      },
+      "btn_gift": "CLAIM GIFT",
+      "btn_explore": "EXPLORE DNM"
+    },
+    "section_introduction": {
+      "title": "TOOLS DO NOT DIRECT",
+      "paragraph1": "Today there are more tools, platforms, and artificial intelligence than ever that never stop creating brands.",
+      "paragraph2": "But most continue to make decisions without a clear strategic direction.",
+      "bullet_point1": "Design without strategy",
+      "bullet_point2": "Marketing without positioning",
+      "bullet_point3": "Growth without structure",
+      "quote1": "Direction is not designed.",
+      "quote2": "It is defined."
+    },
+    "section_solutions": {
+      "title-prologue": "STRATEGIC SOLUTIONS",
+      "title": "FOR LEADERS AND GROWING COMPANIES",
+      "title-paragraph": "Strategy is not the same for everyone. We define strategic solutions according to the type of decision your brand must make."
+    },
+    "section_branding": {
+      "branding_titles": ["PERSONAL BRANDING", "BUSINESS BRANDING"],
+      "branding_subtitles": [
+        "For leaders who need direction, not exposure.",
+        "For companies that need structure, not improvisation."
+      ],
+      "branding_texts": [
+        "Strategy is not the same for everyone.  We define routes according to the type of decision your brand must make.",
+        "Growing businesses that require consistency, internal alignment, and strategic direction."
+      ],
+      "btn": "EXPLORE SOLUTION"
+    },
+    "section_method": {
+      "title-prologue": "HOW WE WORK",
+      "title": "THIS IS HOW WE STRUCTURE BRAND DIRECTION",
+      "intro1": "Most brands start with design or marketing.",
+      "intro2": "At DNM we start with consulting and strategy.",
+      "subtitle": "Our method organizes brand direction into four strategic phases.",
+      "step_titles": ["Diagnosis", "Strategy", "Materialization", "Direction"],
+      "step_paragraphs": [
+        "We analyze your brand, context, and current decisions to understand what it really needs.",
+        "We define the communication style that suits you best, the narrative, and the directions that will give value to your brand.",
+        "We structure the right strategy to achieve your goals in the shortest time possible.",
+        "We accompany you in the implementation of the strategy for your project from start to finish."
+      ]
+    },
+    "section_about_us": {
+      "title": "WITHOUT STRATEGY, THE BRAND HAS NO DIRECTION",
+      "subtitle": "WHO ARE WE?",
+      "btn": "MEET DNM"
+    },
+    "section_estrategic_causes": {
+      "title": "WHEN STRATEGY DEFINES DIRECTION",
+      "subtitle": "Strategy is not demonstrated with speech.It is demonstrated with decisions.",
+      "text": "These cases show how strategic direction transforms brands in practice.",
+      "view_all": "View all cases",
+      "cases_subtitles": [
+        "Industrial parks",
+        "High-ranking official, businessman & builder of modern Mexico",
+        "Construction | Design | Development",
+        "Relevant architect in contemporary Mexican architecture"
+      ],
+      "cases_descriptions": [
+        "Brand architecture for industrial expansion",
+        "Strategic positioning for public leadership",
+        "Brand structure for architectural development.",
+        "Brand direction for leadership in architecture"
+      ],
+      "architect": "Architect",
+      "personal_branding": "Personal Branding",
+      "business_branding": "Business Branding",
+      "explore": "Explore case",
+      "prev": "Previous",
+      "next": "Next"
+    },
+    "section_target": {
+      "title": "For leaders and companies that  need direction for their brand"
+    },
+    "section_contact": {
+      "title": "Let's talk about the direction of your brand",
+      "subtitle": "Share some details about your brand and we will evaluate how we can help you",
+      "channels": "Other contact channels",
+      "form_labels": {
+        "name": "Name *",
+        "business_name": "Company *",
+        "email": "Email *",
+        "brand_stage": "Brand stage *",
+        "challenge": "What strategic challenge are you facing?"
+      },
+      "form_placeholders": {
+        "name": "Your full name",
+        "business_name": "Your company name",
+        "email": "you@company.com",
+        "brand_stage": "Select an option",
+        "brand_stage_options": [
+          "Start / Pre-launch",
+          "Early Growth",
+          "Expansion",
+          "Consolidation",
+          "Transformation | Repositioning"
+        ],
+        "challenge": "Describe your project or business need"
+      },
+      "form_button": "Contact"
+    },
+    "section_footer": {
+      "text": "© 2026 DNM. All rights reserved."
+    }
+  }
+}

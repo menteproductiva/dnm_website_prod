@@ -98,7 +98,7 @@ export const SectionSeparator = () => {
         <ellipse
           cx="50%"
           cy="0%"
-          ry={`${visiblePercentage - 10}%`}
+          ry={`${visiblePercentage >= 10 ? visiblePercentage - 10 : 0}%`} // ternary used to prevent radius from going into negative values
           fill="url(#radialGlowIntro)"
           opacity={0.8}
           stroke="white"

@@ -1,0 +1,167 @@
+{
+  "Metadata": {
+    "title": "",
+    "description": "",
+    "keywords": ["", ""]
+  },
+  "home": {
+    "section_navbar": {
+      "options": {
+        "aboutUs": "Nosotros",
+        "solutions": "Soluciones",
+        "solutionsList": ["Marca Personal", "Marca Empresarial"],
+        "cases": "Casos",
+        "method": "Método",
+        "contact": "Contacto"
+      },
+      "whatsappBtn": "Platiquemos",
+      "languageBtn": "ES"
+    },
+    "section_hero": {
+      "subtitle": "CONSULTORÍA & ESTRATEGIA PARA MARCAS PERSONALES & EMPRESARIALES",
+      "btn": "Conoce más",
+      "sections_title": [
+        "Tu nombre ya tiene peso",
+        "Tu empresa está creciendo"
+      ],
+      "sections_subtitle": [
+        "Ahora necesita dirección.",
+        "Tu marca debe sostenerlo."
+      ],
+      "sections_description1": ["MARCA PERSONAL", "MARCA EMPRESARIAL"],
+      "sections_description2": [
+        "para lideres y comunicadores",
+        "para negocios y empresas"
+      ]
+    },
+    "welcome_window": {
+      "title": "Bienvenido a DNM",
+      "paragraph1": {
+        "text1": "Esto los estás viendo",
+        "text2": "solo tú",
+        "text3": "que asististe a la conferencia."
+      },
+      "paragraph2": {
+        "text1": "Cuando quieras comenzar a impulsar tu",
+        "text2": "marca personal",
+        "text3": "o de tu empresa búscanos en este sitio:"
+      },
+      "link": "https://dnm.com",
+      "paragraph3": {
+        "text1": "Pero el",
+        "text2": "regalo",
+        "text3": "que te prometió el arquitecto José Garnica está aquí"
+      },
+      "btn_gift": "OBTENER REGALO",
+      "btn_explore": "EXPLORAR DNM"
+    },
+    "section_introduction": {
+      "title": "LAS HERRAMIENTAS NO DIRIGEN",
+      "paragraph1": "Hoy existen más herramientas, plataformas e inteligencia artificial que nunca paran de crear marcas.",
+      "paragraph2": "Pero la mayoría sigue tomando decisiones sin una dirección estratégica clara.",
+      "bullet_point1": "Diseño sin estrategia",
+      "bullet_point2": "Marketing sin posicionamiento",
+      "bullet_point3": "Crecimiento sin estructura",
+      "quote1": "La dirección no se diseña.",
+      "quote2": "Se define."
+    },
+    "section_solutions": {
+      "title-prologue": "SOLUCIONES ESTRATÉGICAS",
+      "title": "PARA LÍDERES Y EMPRESAS EN CRECIMIENTO",
+      "title-paragraph": "La estrategia no es igual para todos. Definimos soluciones estratégicas según el tipo de decisión que tu marca debe tomar."
+    },
+    "section_branding": {
+      "branding_titles": ["MARCA PERSONAL", "MARCA EMPRESARIAL"],
+      "branding_subtitles": [
+        "Para lideres que necesitan dirección, no exposición.",
+        "Para empresas que necesitan estructura, no improvisación."
+      ],
+      "branding_texts": [
+        "La estrategia no es igual para todos. Definimos rutas según el tipo de decisión que tu marca debe tomar.",
+        "Negocios en crecimiento que requieren coherencia, alineación interna y dirección estratégica."
+      ],
+      "btn": "EXPLORAR SOLUCIÓN"
+    },
+    "section_method": {
+      "title-prologue": "CÓMO TRABAJAMOS",
+      "title": "ASÍ ESTRUCTURAMOS LA DIRECCIÓN DE MARCA",
+      "intro1": "La mayoría de las marcas empieza por diseño o marketing.",
+      "intro2": "En DNM empezamos por consultoría y estrategia.",
+      "subtitle": "Nuestro método organiza la dirección de marca en cuatro fases estratégicas.",
+      "step_titles": [
+        "Diagnóstico",
+        "Estrategia",
+        "Materialización",
+        "Dirección"
+      ],
+      "step_paragraphs": [
+        "Analizamos tu marca, contexto y decisiones actuales para entender qué necesita realmente.",
+        "Definimos el estilo de comunicación que más te conviene, la narrativa y las direcciones que darán valor a tu marca.",
+        "Estructuramos la estrategia correcta para lograr tus objetivos en el menor tiempo posible.",
+        "Te acompañamos en la implementación de la estrategia para tu proyecto de principio a fin."
+      ]
+    },
+    "section_about_us": {
+      "title": "SIN ESTRATEGIA, LA MARCA NO TIENE DIRECCIÓN",
+      "subtitle": "¿QUIÉNES SOMOS?",
+      "btn": "CONOCER DNM"
+    },
+    "section_estrategic_causes": {
+      "title": "CUANDO LA ESTRATEGIA DEFINE LA DIRECCIÓN",
+      "subtitle": "La estrategia no se demuestra con discurso.Se demuestra con decisiones.",
+      "text": "Estos casos muestran cómo la dirección estratégica transforma marcas en la práctica.",
+      "view_all": "Ver todos los casos",
+      "cases_subtitles": [
+        "Parques industriales",
+        "Alto funcionario, empresario & constructor del México moderno",
+        "Construcción | Diseño | Desarrollo ",
+        "Arquitecto relevante en la arquitectura contemporánea mexicana"
+      ],
+      "cases_descriptions": [
+        "Arquitectura de marca para expansión industrial",
+        "Posicionamiento estratégico para liderazgo público",
+        "Estructura de marca para desarrollo arquitectónico.",
+        "Dirección de marca para liderazgo en arquitectura"
+      ],
+      "architect": "Arquitecto",
+      "personal_branding": "Marca Personal",
+      "business_branding": "Marca Empresarial",
+      "explore": "Explorar caso",
+      "prev": "Anterior",
+      "next": "Siguiente"
+    },
+    "section_target": {
+      "title": "Para lideres y empresas que  necesitan dirección para su marca"
+    },
+    "section_contact": {
+      "title": "Hablemos sobre la dirección de tu marca",
+      "subtitle": "Comparte algunos detalles sobre tu marca y evaluaremos cómo podemos ayudarte",
+      "channels": "Otros canales de contacto",
+      "form_labels": {
+        "name": "Nombre *",
+        "business_name": "Empresa *",
+        "email": "Correo *",
+        "brand_stage": "Etapa de tu marca *",
+        "challenge": "¿Qué reto estratégico enfrentas?"
+      },
+      "form_placeholders": {
+        "name": "Tu nombre completo",
+        "business_name": "Nombre de tu empresa",
+        "email": "tu@empresa.com",
+        "brand_stage": "Selecciona una opción",
+        "brand_stage_options": [
+          "Inicio / Pre-lanzamiento",
+          "Crecimiento Temprano",
+          "Expansión",
+          "Consolidación",
+          "Transformación | Reposicionamiento"
+        ],
+        "challenge": "Describe tu proyecto o necesidad empresarial"
+      },
+      "form_button": "Contactar"
+    },
+    "section_footer": {
+      "text": "© 2026 DNM. Todos los derechos reservados."
+    }
+  }
+}
