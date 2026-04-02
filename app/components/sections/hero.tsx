@@ -2,12 +2,23 @@
 import Image from "next/image";
 import { ArrowRightDown } from "../icons/icons";
 import { Modal } from "../modal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
+import { useSearchParams } from "next/navigation"; // Use 'next/navigation' for App Router
 
 export const Hero = () => {
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
   const t = useTranslations("home.section_hero");
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    // Check if the specific query param exists
+    const conferenceId = searchParams.get("conference-id");
+
+    if (conferenceId) {
+      setShowModal(true);
+    }
+  }, [searchParams]);
 
   return (
     <>

@@ -184,3 +184,37 @@ export const Whatsapp = ({
     </svg>
   );
 };
+
+export const LongArrow = ({
+  strokeWidth = 1,
+  color = "white",
+  size = 20,
+  className,
+  direction = "up",
+  ...props
+}: {
+  strokeWidth?: number;
+  color?: string;
+  size?: number;
+  className?: string;
+  direction?: "up" | "down" | "left" | "right";
+}) => {
+  const directionClass = direction === "up" ? "rotate-180" : "";
+
+  return (
+    <svg
+      width={size}
+      height={size}
+      stroke={color}
+      viewBox="0 0 10 10"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      strokeLinecap="round"
+      strokeWidth={strokeWidth}
+      className={`${className} ${direction === "down" ? "rotate-180" : direction === "left" ? "-rotate-90" : direction === "right" && "rotate-90"}`}
+    >
+      <path d="M3 3 l 2 -2 l2 2 " />
+      <path d="M5 1 v8 " fill="none" />
+    </svg>
+  );
+};

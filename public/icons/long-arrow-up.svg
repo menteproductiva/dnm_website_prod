@@ -1,0 +1,11 @@
+<svg width="10" height="6"
+    stroke="white" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"
+    stroke-linecap="round" stroke-width="1">
+    <path
+        d="M3 3 l 2 -2 l2 2 "
+    />
+    <path
+        d="M5 1 v8 "
+        fill="none"
+    />
+</svg>

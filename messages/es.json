@@ -107,8 +107,10 @@
       "btn": "CONOCER DNM"
     },
     "section_estrategic_causes": {
+      "title_prologue": "Caros Estratégicos",
       "title": "CUANDO LA ESTRATEGIA DEFINE LA DIRECCIÓN",
-      "subtitle": "La estrategia no se demuestra con discurso.Se demuestra con decisiones.",
+      "subtitle1": "La estrategia no se demuestra con discurso",
+      "subtitle2": "Se demuestra con decisiones.",
       "text": "Estos casos muestran cómo la dirección estratégica transforma marcas en la práctica.",
       "view_all": "Ver todos los casos",
       "cases_subtitles": [

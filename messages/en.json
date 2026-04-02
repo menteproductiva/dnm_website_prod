@@ -100,8 +100,10 @@
       "btn": "MEET DNM"
     },
     "section_estrategic_causes": {
+      "title_prologue": "Strategic Cases",
       "title": "WHEN STRATEGY DEFINES DIRECTION",
-      "subtitle": "Strategy is not demonstrated with speech.It is demonstrated with decisions.",
+      "subtitle1": "Strategy is not demonstrated with speech",
+      "subtitle2": "It is demonstrated with decisions.",
       "text": "These cases show how strategic direction transforms brands in practice.",
       "view_all": "View all cases",
       "cases_subtitles": [

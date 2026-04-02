@@ -14,7 +14,7 @@ import Link from "next/link";
 
 export const Navbar = () => {
   return (
-    <div className="top-0 z-50 fixed w-full h-20">
+    <div className="top-0 z-50 fixed backdrop-blur-lg w-full h-20">
       <NavbarMobile />
       <NavbarDesktop />
     </div>
@@ -168,7 +168,7 @@ const NavbarMobile = () => {
               </span>
             </div>
             {/* ---------- Whatsapp ----------   */}
-            <p className="flex flex-row justify-center gap-5 bg-green-500 mx-auto px-6 py-3 rounded-full w-full md:w-fit h-min text-center">
+            {/* <p className="flex flex-row justify-center gap-5 bg-green-500 mx-auto px-6 py-3 rounded-full w-full md:w-fit h-min text-center">
               <Whatsapp
                 color="white"
                 size={20}
@@ -176,7 +176,7 @@ const NavbarMobile = () => {
                 className="my-auto"
               />
               <span className="">{t("whatsappBtn")}</span>
-            </p>
+            </p> */}
             {/* ---------- Language ----------   */}
             <div className="mt-auto mb-5">
               <LanguageButton />
@@ -215,7 +215,7 @@ const NavbarDesktop = () => {
 
         {/* Options  */}
         <Option>
-          <Link href="/">{t("options.cases")}</Link>
+          <Link href="/">{t("options.aboutUs")}</Link>
         </Option>
 
         <Option>
@@ -269,6 +269,8 @@ const NavbarDesktop = () => {
 const WhatsAppButton = () => {
   const t = useTranslations("home.section_navbar");
   const [showAnimation, setShowAnimation] = useState(false);
+
+  return <></>;
 
   return (
     <div
