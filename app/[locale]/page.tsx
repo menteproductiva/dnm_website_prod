@@ -3,6 +3,7 @@ import { SectionSeparator } from "../components/sectionSeparator";
 import { Introduction } from "../components/sections/introduction";
 import { Solutions } from "../components/sections/solutions";
 import { Branding } from "../components/sections/branding";
+import { Method } from "../components/sections/method";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <Introduction />
         <Solutions />
         <Branding />
+        <Method />
       </div>
     </main>
   );
