@@ -5,6 +5,7 @@ import { Modal } from "../modal";
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation"; // Use 'next/navigation' for App Router
+import Link from "next/link";
 
 export const Hero = () => {
   const [showModal, setShowModal] = useState(false);
@@ -141,7 +142,10 @@ export const Hero = () => {
             {/* ----------  Introduction ----------   */}
             <div className="flex lg:flex-row flex-col gap-10 w-full h-fit md:h-1/3 lg:h-fit text-white">
               {/* PERSONAL  */}
-              <div className="flex flex-col gap-2 md:gap-6 w-full">
+              <Link
+                href="#section-branding"
+                className="flex flex-col gap-2 md:gap-6 w-full"
+              >
                 <p className="flex flex-col w-full">
                   <span className="w-full font-semibold text-xl">
                     {t("sections_title.0")}
@@ -159,16 +163,19 @@ export const Hero = () => {
                       {t("sections_description2.0")}
                     </span>
                   </p>
-                  <ArrowRightDown
+                  {/* <ArrowRightDown
                     color="#9f6637"
                     size={20}
                     className="my-auto"
                     strokeWidth={6}
-                  />
+                  /> */}
                 </div>
-              </div>
+              </Link>
               {/* BUSINESS  */}
-              <div className="flex flex-col gap-2 md:gap-6 w-full">
+              <Link
+                href="#section-branding"
+                className="flex flex-col gap-2 md:gap-6 w-full"
+              >
                 <p className="flex flex-col w-full">
                   <span className="w-full font-semibold text-xl">
                     {t("sections_title.1")}
@@ -186,13 +193,13 @@ export const Hero = () => {
                       {t("sections_description2.1")}
                     </span>
                   </p>
-                  <ArrowRightDown
+                  {/* <ArrowRightDown
                     color="#9f6637"
                     className="my-auto"
                     strokeWidth={6}
-                  />
+                  /> */}
                 </div>
-              </div>
+              </Link>
             </div>
           </section>
         </div>

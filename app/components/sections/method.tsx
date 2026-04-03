@@ -6,7 +6,10 @@ export const Method = () => {
   const t = useTranslations("home.section_method");
 
   return (
-    <section className="flex flex-col gap-5 mx-auto w-full lg:w-3/4">
+    <section
+      className="flex flex-col gap-5 mx-auto py-10 md:py-20 w-full lg:w-3/4"
+      id="section-method"
+    >
       <p className="flex flex-col items-center gap-5 m-auto px-5 w-full lg:w-2/3 text-white">
         {/* Como trabajamos  */}
 

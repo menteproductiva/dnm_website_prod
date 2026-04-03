@@ -8,7 +8,10 @@ export const StrategicCases = () => {
   const t = useTranslations("home.section_estrategic_causes");
 
   return (
-    <section className="flex flex-col gap-5 mx-auto py-10 mg:py-20 w-full lg:w-3/4">
+    <section
+      className="flex flex-col gap-5 mx-auto py-10 mg:py-20 w-full lg:w-3/4"
+      id="section-cases"
+    >
       <p className="flex flex-col items-center gap-5 m-auto px-5 w-full lg:w-2/3 text-white">
         <span className="w-full text-primary2-500 text-xl md:text-2xl lg:text-3xl text-center">
           {/* Casos estrategicos  */}

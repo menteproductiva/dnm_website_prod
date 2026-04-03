@@ -3,7 +3,7 @@ import { LongArrow } from "../icons/icons";
 
 export const AboutUs = () => {
   return (
-    <section>
+    <section id="section-about-us">
       <ContentDesktop />
       <ContentMobile />
     </section>

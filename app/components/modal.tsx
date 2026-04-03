@@ -119,20 +119,20 @@ export const Modal = ({
             <span className="text-primary2-500">{t("link")} </span>
           </span>
 
-          <span className="w-full text-center">
+          {/* <span className="w-full text-center">
             <span> {t("paragraph3.text1")}</span>
             <span> {t("paragraph3.text2")}</span>
             <span> {t("paragraph3.text3")}</span>
-          </span>
+          </span> */}
         </p>
 
         <p className="relative flex md:flex-row flex-col justify-center md:justify-around items-center gap-5 md:gap-0 w-full text-sm md:text-lg">
-          <Link
+          {/* <Link
             href="/"
             className="bg-primary2-500 md:mt-auto px-5 md:px-6 py-2 md:py-3 border-2 border-primary2-500 rounded-xl w-3/5 md:w-2/5 text-center"
           >
             {t("btn_gift")}
-          </Link>
+          </Link> */}
           <span
             onClick={() => {
               setIsVisible(false);

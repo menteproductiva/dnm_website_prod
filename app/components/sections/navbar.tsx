@@ -29,6 +29,10 @@ const NavbarMobile = () => {
   const handleMenuClick = () => {
     setShowMenu(!showMenu);
   };
+  const closeMenu = () => {
+    setShowMenu(false);
+    setShowSubMenu(false);
+  };
   return (
     <header className="lg:hidden z-10 absolute flex flex-row justify-between px-6 py-7 w-full text-white text-lg">
       {/* Icon  */}
@@ -131,16 +135,17 @@ const NavbarMobile = () => {
           <div className="flex flex-col gap-5 p-5 w-full h-full">
             {/* ---------- Menu ----------   */}
             <div className="flex flex-col gap-5 text-white text-2xl">
-              <span className="my-auto w-fit h-min align-middle">
+              <Link href="#section-about-us" onClick={closeMenu}>
                 {t("options.aboutUs")}
-              </span>
-              <span>{t("options.solutions")}</span>
-
-              <span>{t("options.cases")}</span>
-              <span>{t("options.method")}</span>
-              <span>{t("options.contact")}</span>
+              </Link>
+              <Link href="#section-cases" onClick={closeMenu}>
+                {t("options.cases")}
+              </Link>
+              <Link href="#section-method" onClick={closeMenu}>
+                {t("options.method")}
+              </Link>
               <span
-                className="flex flex-row gap-2"
+                className="flex flex-row gap-2 cursor-pointer"
                 onClick={() => {
                   setShowSubMenu(!showSubMenu);
                 }}
@@ -159,10 +164,18 @@ const NavbarMobile = () => {
               <span
                 className={`flex flex-col gap-2 justify-around duration-500 ${showSubMenu ? "h-18 opacity-100" : "opacity-0 h-0"}`}
               >
-                <Link href="/" className={`whitespace-nowrap pl-4`}>
+                <Link
+                  href="#section-branding"
+                  className="pl-4 whitespace-nowrap"
+                  onClick={closeMenu} // Close on sub-menu click
+                >
                   {t("options.solutionsList.0")}
                 </Link>
-                <Link href="/" className={`whitespace-nowrap pl-4`}>
+                <Link
+                  href="#section-branding"
+                  className="pl-4 whitespace-nowrap"
+                  onClick={closeMenu} // Close on sub-menu click
+                >
                   {t("options.solutionsList.1")}
                 </Link>
               </span>
@@ -185,6 +198,25 @@ const NavbarMobile = () => {
         </div>
       )}
     </header>
+  );
+};
+
+const NavbarButton = ({}: {}) => {
+  return (
+    <p>
+      <span>NavbarButton</span>
+      <div></div>
+
+      <p>
+        <ul className="bg-red-500 border-2">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </p>
+    </p>
   );
 };
 
@@ -215,7 +247,7 @@ const NavbarDesktop = () => {
 
         {/* Options  */}
         <Option>
-          <Link href="/">{t("options.aboutUs")}</Link>
+          <Link href="#section-about-us">{t("options.aboutUs")}</Link>
         </Option>
 
         <Option>
@@ -236,10 +268,16 @@ const NavbarDesktop = () => {
             {showSubMenu && (
               <div className="-bottom-5 left-0 absolute flex flex-col gap-2 bg-black px-7 py-5 border border-slate-200/20 rounded w-auto h-min translate-y-full animate-fade-in duration-500">
                 <p className="text-primary2-400">{t("options.solutions")}</p>
-                <Link href="/" className="pl-4 whitespace-nowrap">
+                <Link
+                  href="#section-branding"
+                  className="pl-4 whitespace-nowrap"
+                >
                   {t("options.solutionsList.0")}
                 </Link>
-                <Link href="/" className="pl-4 whitespace-nowrap">
+                <Link
+                  href="#section-branding"
+                  className="pl-4 whitespace-nowrap"
+                >
                   {t("options.solutionsList.1")}
                 </Link>
               </div>
@@ -248,14 +286,14 @@ const NavbarDesktop = () => {
         </Option>
 
         <Option>
-          <span>{t("options.cases")}</span>
+          <Link href="#section-cases">{t("options.cases")}</Link>
         </Option>
         <Option>
-          <span>{t("options.method")}</span>
+          <Link href="#section-method">{t("options.method")}</Link>
         </Option>
-        <Option>
-          <span>{t("options.contact")}</span>
-        </Option>
+        {/* <Option>
+          <Link href="#section-method">{t("options.contact")}</Link>
+        </Option> */}
       </div>
       {/* -------------------- {right-side menu here} -------------------- */}
       <div className="flex flex-row gap-5">

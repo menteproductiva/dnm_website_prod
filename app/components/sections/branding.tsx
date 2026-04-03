@@ -65,7 +65,7 @@ const BrandingSection = ({
       {/* Black Gradient  */}
       <div className="bottom-10 absolute bg-linear-to-b from-transparent to-black w-full h-1/2 to"></div>
 
-      <div className="bottom-10 z-10 absolute flex">
+      {/* <div className="bottom-10 z-10 absolute flex">
         <Link
           href={link}
           className="flex flex-row gap-3 bg-black mt-auto px-10 py-5 border-2 border-primary2-500 rounded-xl"
@@ -73,7 +73,7 @@ const BrandingSection = ({
           <span className="my-auto">{t("btn")}</span>
           <ArrowRightUp strokeWidth={4} className="my-auto" size={15} />
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 };
