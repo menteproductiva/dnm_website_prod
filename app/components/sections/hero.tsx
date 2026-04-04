@@ -27,7 +27,7 @@ export const Hero = () => {
       <div className="relative">
         {/* ACTUAL CONTENT  */}
         <div
-          className="top-0 fixed px-5 lg:px-40 xl:px-80 w-screen"
+          className="top-0 left-0 fixed px-5 lg:px-40 xl:px-80 w-screen"
           style={{ height: "98vh" }}
         >
           <section
@@ -35,7 +35,7 @@ export const Hero = () => {
           >
             {/* ---------- Glow Background ----------   */}
             <svg
-              className="top-0 absolute w-screen h-screen object-fill"
+              className="top-0 left-0 absolute w-screen h-screen object-fill"
               stroke="white"
               strokeWidth={0}
             >

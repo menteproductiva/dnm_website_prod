@@ -37,7 +37,7 @@
   --color-primary1-800: var(--color-primary1-800);
   --color-primary1-900: var(--color-primary1-900);
 
-  
+
 
   /* Primary 2 Group */
   --color-primary2-50: var(--color-primary2-50);
@@ -92,21 +92,54 @@
   --animate-upside-down: upsideDown .2s linear forwards;
 
   @keyframes upsideDown {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(180deg); }
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(180deg);
+    }
   }
+
   @keyframes spotlight {
-    0% { opacity: 0; transform: translate(-72%, -62%) scale(0.5); }
-    100% { opacity: 1; transform: translate(-50%, -40%) scale(1); }
+    0% {
+      opacity: 0;
+      transform: translate(-72%, -62%) scale(0.5);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translate(-50%, -40%) scale(1);
+    }
   }
+
   @keyframes FadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
   }
+
   @keyframes RadarRotation {
-    0%, 100% { transform: rotate(0deg); opacity: 0; }
-    20%, 60% { opacity: .7; }
-    80% { transform: rotate(180deg); opacity: 0; }
+
+    0%,
+    100% {
+      transform: rotate(0deg);
+      opacity: 0;
+    }
+
+    20%,
+    60% {
+      opacity: .7;
+    }
+
+    80% {
+      transform: rotate(180deg);
+      opacity: 0;
+    }
   }
 
 }
@@ -114,7 +147,7 @@
 :root {
   --background: #0a0a0a;
   --foreground: #ededed;
-  
+
   --color-base: #121211;
   /* neutral 1 */
   --color-neutral1-50: #fefefe;
@@ -186,7 +219,7 @@
 [data-theme="dark"] {
   --background: #0a0a0a;
   --foreground: #ededed;
-  
+
   --color-base: #121211;
   /* neutral 1 */
   --color-neutral1-50: #fefefe;
@@ -261,17 +294,23 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
- /* -------------------- ANIMATIONS -------------------- */
-@keyframes HoverFrames 
-{
-    from { transform: translate(0%, 0%); }
-    to { transform: translate(0%, 2%); }
+/* -------------------- ANIMATIONS -------------------- */
+@keyframes HoverFrames {
+  from {
+    transform: translate(0%, 0%);
+  }
+
+  to {
+    transform: translate(0%, 2%);
+  }
 }
 
-@keyframes OpacityFrames 
-{
-    from  { opacity: 0; }
-    to    { opacity: 1; }
+@keyframes OpacityFrames {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
-
-

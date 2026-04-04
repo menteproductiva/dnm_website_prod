@@ -14,7 +14,7 @@ import Link from "next/link";
 
 export const Navbar = () => {
   return (
-    <div className="top-0 z-50 fixed backdrop-blur-lg w-full h-20">
+    <div className="top-0 left-0 z-50 fixed backdrop-blur-lg w-full h-20">
       <NavbarMobile />
       <NavbarDesktop />
     </div>
@@ -34,7 +34,7 @@ const NavbarMobile = () => {
     setShowSubMenu(false);
   };
   return (
-    <header className="lg:hidden z-10 absolute flex flex-row justify-between px-6 py-7 w-full text-white text-lg">
+    <header className="left-0 lg:hidden z-10 absolute flex flex-row justify-between px-6 py-7 w-full text-white text-lg">
       {/* Icon  */}
       <Image
         src={isotipo}
@@ -233,7 +233,7 @@ const NavbarDesktop = () => {
   };
 
   return (
-    <header className="hidden z-10 absolute lg:flex flex-row justify-between px-6 lg:px-10 py-7 lg:py-2 2xl:py-4 w-full text-white 2xl:text-md text-lg">
+    <header className="left-0 hidden z-10 absolute lg:flex flex-row justify-between px-6 lg:px-10 py-7 lg:py-2 2xl:py-4 w-full text-white 2xl:text-md text-lg">
       {/* -------------------- {left-side menu here} -------------------- */}
       {/* Icon  */}
       <div className="flex flex-row lg:gap-5 text-white">

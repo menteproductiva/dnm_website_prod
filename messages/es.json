@@ -17,7 +17,10 @@
       "options": {
         "aboutUs": "Nosotros",
         "solutions": "Soluciones",
-        "solutionsList": ["Marca Personal", "Marca Empresarial"],
+        "solutionsList": [
+          "Marca Personal",
+          "Marca Empresarial"
+        ],
         "cases": "Casos",
         "method": "Método",
         "contact": "Contacto"
@@ -36,7 +39,10 @@
         "Ahora necesita dirección.",
         "Tu marca debe sostenerlo."
       ],
-      "sections_description1": ["MARCA PERSONAL", "MARCA EMPRESARIAL"],
+      "sections_description1": [
+        "MARCA PERSONAL",
+        "MARCA EMPRESARIAL"
+      ],
       "sections_description2": [
         "para lideres y comunicadores",
         "para negocios y empresas"
@@ -79,7 +85,10 @@
       "title-paragraph": "La estrategia no es igual para todos. Definimos soluciones estratégicas según el tipo de decisión que tu marca debe tomar."
     },
     "section_branding": {
-      "branding_titles": ["MARCA PERSONAL", "MARCA EMPRESARIAL"],
+      "branding_titles": [
+        "MARCA PERSONAL",
+        "MARCA EMPRESARIAL"
+      ],
       "branding_subtitles": [
         "Para lideres que necesitan dirección, no exposición.",
         "Para empresas que necesitan estructura, no improvisación."
@@ -115,7 +124,7 @@
       "btn": "CONOCER DNM"
     },
     "section_estrategic_causes": {
-      "title_prologue": "Caros Estratégicos",
+      "title_prologue": "Casos Estratégicos",
       "title": "CUANDO LA ESTRATEGIA DEFINE LA DIRECCIÓN",
       "subtitle1": "La estrategia no se demuestra con discurso",
       "subtitle2": "Se demuestra con decisiones.",

@@ -63,9 +63,9 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className="overflow-x-hidden">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black relative`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black relative overflow-x-hidden`}
       >
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Navbar />
