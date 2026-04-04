@@ -12,7 +12,7 @@ export const Footer = () => {
     >
       {/* ---------- Glow Background ----------   */}
       <svg
-        className="top-0 z-0 absolute w-screen h-full object-fill overflow-visible"
+        className="top-0 left-0 z-0 absolute w-screen h-full object-fill overflow-visible"
         stroke="white"
         strokeWidth={0}
       >

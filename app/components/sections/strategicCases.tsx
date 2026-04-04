@@ -1,7 +1,7 @@
 "use client";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { ArrowRightUp } from "../icons/icons";
 
 export const StrategicCases = () => {
@@ -9,7 +9,7 @@ export const StrategicCases = () => {
 
   return (
     <section
-      className="flex flex-col gap-5 mx-auto py-10 mg:py-20 w-full lg:w-3/4"
+      className="flex flex-col gap-5 mx-auto py-10 md:py-20 w-full lg:w-3/4"
       id="section-cases"
     >
       <p className="flex flex-col items-center gap-5 m-auto px-5 w-full lg:w-2/3 text-white">
@@ -45,6 +45,7 @@ export const StrategicCases = () => {
 const Carousel = () => {
   const t = useTranslations("home.section_estrategic_causes");
   const [currentSlide, setCurrentSlide] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   const slides = [
     {
@@ -78,33 +79,55 @@ const Carousel = () => {
   ];
 
   const handlePrev = () => {
-    if (currentSlide < 1) {
-      setCurrentSlide(0);
-      return;
+    if (scrollRef.current) {
+      const cardEl = scrollRef.current.firstElementChild as HTMLElement;
+      if (cardEl) {
+        scrollRef.current.scrollBy({ left: -(cardEl.clientWidth + 20), behavior: "smooth" });
+      }
     }
-    setCurrentSlide(currentSlide - 1);
   };
   const handleNext = () => {
-    if (currentSlide > 2) {
-      setCurrentSlide(3);
-      return;
+    if (scrollRef.current) {
+      const cardEl = scrollRef.current.firstElementChild as HTMLElement;
+      if (cardEl) {
+        scrollRef.current.scrollBy({ left: cardEl.clientWidth + 20, behavior: "smooth" });
+      }
     }
-    setCurrentSlide(currentSlide + 1);
+  };
+
+  const handleScroll = () => {
+    if (scrollRef.current) {
+      const cardEl = scrollRef.current.firstElementChild as HTMLElement;
+      if (cardEl) {
+        const index = Math.round(scrollRef.current.scrollLeft / (cardEl.clientWidth + 20));
+        setCurrentSlide(index);
+      }
+    }
+  };
+
+  const setStep = (index: number) => {
+    if (scrollRef.current) {
+      const cardEl = scrollRef.current.firstElementChild as HTMLElement;
+      if (cardEl) {
+        scrollRef.current.scrollTo({ left: (cardEl.clientWidth + 20) * index, behavior: "smooth" });
+      }
+    }
   };
 
   return (
-    <div className="relative flex flex-col gap-5 px-5 md:px-10 lg:px-0">
+    <div className="relative flex flex-col gap-5 lg:px-0 overflow-hidden w-full max-w-[100vw]">
+      {/* -------------------- Carousel wrapper --------------------  */}
       <div
-        className="flex flex-row gap-5 md:gap-0 w-min md:w-full overflow-x-visible duration-500"
-        style={{
-          transform: `translateX(-${currentSlide * 25}%)`,
-        }}
+        ref={scrollRef}
+        onScroll={handleScroll}
+        className="flex flex-row overflow-x-auto snap-x snap-mandatory scroll-smooth w-full px-5 md:px-10 lg:px-0"
+        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {/* -------------------- Carousel Cards --------------------  */}
         {slides.map((slide, index) => (
           <div
             key={`method-card-${index}`}
-            className="relative w-96 md:w-full h-96 transition-transform duration-500 ease-in-out shrink-0 md:shrink"
+            className="relative w-full sm:w-[85%] md:w-[60%] lg:w-[45%] xl:w-[30%] shrink-0 snap-center mr-5 last:mr-0 h-96 transition-transform duration-500 ease-in-out"
           >
             <CarouselCard
               title={slide.title}
@@ -119,8 +142,8 @@ const Carousel = () => {
         ))}
       </div>
       {/* -------------------- Carousel Slider --------------------  */}
-      <div className="md:hidden flex flex-row justify-center gap-2 bg-green-500/0">
-        <p onClick={handlePrev} className="flex flex-row gap-2 cursor-pointer">
+      <div className="flex flex-row justify-center gap-2 mt-4 text-white hover:text-white">
+        <p onClick={handlePrev} className="flex flex-row gap-2 cursor-pointer items-center mr-2">
           <Image
             src={"/icons/arrow-up.svg"}
             width={15}
@@ -128,23 +151,25 @@ const Carousel = () => {
             alt="previous"
             className="my-auto rotate-90"
           />
-          <span>{t("prev")} </span>
+          <span className="hidden sm:block">{t("prev")} </span>
         </p>
-        {new Array(4).fill(null).map((_, index) => (
+        
+        {slides.map((_, index) => (
           <CarouselStep
             key={`method-carousel-${index}`}
             index={index}
             step={currentSlide}
-            setStep={setCurrentSlide}
+            setStep={setStep}
           />
         ))}
-        <p onClick={handleNext} className="flex flex-row gap-2 cursor-pointer">
-          {t("next")}
+
+        <p onClick={handleNext} className="flex flex-row gap-2 cursor-pointer items-center ml-2">
+          <span className="hidden sm:block">{t("next")}</span>
           <Image
             src={"/icons/arrow-up.svg"}
             width={15}
             height={15}
-            alt="previous"
+            alt="next"
             className="my-auto -rotate-90"
           />
         </p>
