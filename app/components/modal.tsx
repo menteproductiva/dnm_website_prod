@@ -12,7 +12,7 @@ export const Modal = ({
   setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
   const modalRef = useRef<HTMLElement>(null);
-  const t = useTranslations("home.welcome_window");
+  const t = useTranslations("welcome_window");
 
   // ---- When Modal is open, disable scroll ----
   useEffect(() => {
@@ -49,7 +49,7 @@ export const Modal = ({
 
   return (
     <div
-      className="top-0 z-50 fixed flex bg-black/20 w-screen h-screen"
+      className="top-0 z-50 fixed flex bg-black/30 w-screen h-screen"
       onClick={handleBackdropClick}
     >
       <section
@@ -59,7 +59,7 @@ export const Modal = ({
         {/* Background and border gradient  */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="top-0 left-0 z-0 absolute w-full h-full overflow-visible"
+          className="top-0 left-0 z-0 absolute backdrop-blur-md w-full h-full overflow-visible"
         >
           <defs>
             <linearGradient
@@ -69,9 +69,17 @@ export const Modal = ({
               x2="100%"
               y2="100%"
             >
-              <stop offset="0%" stopColor="white" stopOpacity=".5" />
-              <stop offset="25%" stopColor="var(--color-primary2-500)" />
-              <stop offset="75%" stopColor="var(--color-primary2-500)" />
+              <stop offset="0%" stopColor="#CCC" stopOpacity=".9" />
+              <stop
+                offset="25%"
+                stopColor="var(--color-primary2-500)"
+                stopOpacity="0"
+              />
+              <stop
+                offset="75%"
+                stopColor="var(--color-primary2-500)"
+                stopOpacity="0"
+              />
               <stop offset="100%" stopColor="black" />
             </linearGradient>
           </defs>
@@ -86,14 +94,15 @@ export const Modal = ({
             ry="3vh"
             stroke="url(#modalGradient)"
             strokeWidth=".3%"
-            fill="#000D"
+            fill="#000"
+            fillOpacity={0.7}
             style={{
               filter: "drop-shadow( 0px 0px 10px rgba(255, 255, 255, .25))",
             }}
           />
         </svg>
         {/* TOP IMAGES  */}
-        <p className="relative flex flex-row justify-center gap-5 h-20 -10">
+        <p className="relative flex flex-row justify-center gap-5 h-20">
           <Image
             src="/branding/isotipo.svg"
             alt="isotipo.svg"

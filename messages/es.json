@@ -13,82 +13,38 @@
     ]
   },
   "home": {
-    "section_navbar": {
-      "options": {
-        "aboutUs": "Nosotros",
-        "solutions": "Soluciones",
-        "solutionsList": [
-          "Marca Personal",
-          "Marca Empresarial"
-        ],
-        "cases": "Casos",
-        "method": "Método",
-        "contact": "Contacto"
-      },
-      "whatsappBtn": "Platiquemos",
-      "languageBtn": "ES"
-    },
     "section_hero": {
-      "subtitle": "CONSULTORÍA & ESTRATEGIA PARA MARCAS PERSONALES & EMPRESARIALES",
-      "btn": "Conoce más",
-      "sections_title": [
-        "Tu nombre ya tiene peso",
-        "Tu empresa está creciendo"
-      ],
-      "sections_subtitle": [
-        "Ahora necesita dirección.",
-        "Tu marca debe sostenerlo."
-      ],
-      "sections_description1": [
-        "MARCA PERSONAL",
-        "MARCA EMPRESARIAL"
-      ],
-      "sections_description2": [
-        "para lideres y comunicadores",
-        "para negocios y empresas"
-      ]
-    },
-    "welcome_window": {
-      "title": "Bienvenido a DNM",
-      "paragraph1": {
-        "text1": "Esto los estás viendo",
-        "text2": "solo tú",
-        "text3": "que asististe a la conferencia."
-      },
-      "paragraph2": {
-        "text1": "Cuando quieras comenzar a impulsar tu",
-        "text2": "marca personal",
-        "text3": "o de tu empresa búscanos en este sitio:"
-      },
-      "link": "https://dnm.com",
-      "paragraph3": {
-        "text1": "Pero el",
-        "text2": "regalo",
-        "text3": "que te prometió el arquitecto José Garnica está aquí"
-      },
-      "btn_gift": "OBTENER REGALO",
-      "btn_explore": "EXPLORAR DNM"
+      "title": ["Executive personal branding", "para C-suite"],
+      "title-mobile": ["Executive", "personal", "branding para", "C-suite"],
+      "subtitle": "Tu marca, dirigida",
+      "text": "Dirigimos la marca del C-Suite como activo estratégico del negocio. Con disciplina consultiva. Con grado fílmico",
+      "buttons": ["Agendar diagnostico", "Ver soluciones"]
     },
     "section_introduction": {
-      "title": "LAS HERRAMIENTAS NO DIRIGEN",
-      "paragraph1": "Hoy existen más herramientas, plataformas e inteligencia artificial que nunca paran de crear marcas.",
-      "paragraph2": "Pero la mayoría sigue tomando decisiones sin una dirección estratégica clara.",
-      "bullet_point1": "Diseño sin estrategia",
-      "bullet_point2": "Marketing sin posicionamiento",
-      "bullet_point3": "Crecimiento sin estructura",
-      "quote1": "La dirección no se diseña.",
-      "quote2": "Se define."
+      "title": ["Autoridad adentro. ", "Dirección ", "afuera"],
+      "paragraph1": "Cada movimiento estratégico del C-Suite consolida autoridad dentro de la empresa. Una marca personal dirigida la convierte en activo público: confianza en el mercado, claridad para el capital, atracción de talento ejecutivo.",
+      "bullet_points": {
+        "titles": [
+          "Decisión que dirige",
+          "Presencia que materializa",
+          "Dirección continua que sostiene"
+        ],
+        "texts": [
+          "Cada elemento de la marca personal parte del criterio.",
+          "El liderazgo se traduce en lenguaje visual con grado fílmico",
+          "La marca opera en el tiempo hasta convertirse en activo de negocio."
+        ]
+      },
+      "quote1": "Primero la decisión.",
+      "quote2": ["Después la ", "marca."]
     },
     "section_solutions": {
       "title-prologue": "SOLUCIONES ESTRATÉGICAS",
-      "title": "PARA LÍDERES Y EMPRESAS EN CRECIMIENTO",
-      "title-paragraph": "La estrategia no es igual para todos. Definimos soluciones estratégicas según el tipo de decisión que tu marca debe tomar."
+      "title": ["PARA ", "LÍDERES ", "Y ", "EMPRESAS ", "EN CRECIMIENTO"],
+      "title-paragraph": "Cada marca enfrenta decisiones distintas. Definimos soluciones estratégicas según el momento y la dirección que tu marca necesita."
     },
     "section_branding": {
-      "branding_titles": [
-        "MARCA PERSONAL",
-        "MARCA EMPRESARIAL"
-      ],
+      "branding_titles": ["MARCA PERSONAL", "MARCA EMPRESARIAL"],
       "branding_subtitles": [
         "Para lideres que necesitan dirección, no exposición.",
         "Para empresas que necesitan estructura, no improvisación."
@@ -100,67 +56,80 @@
       "btn": "EXPLORAR SOLUCIÓN"
     },
     "section_method": {
-      "title-prologue": "CÓMO TRABAJAMOS",
-      "title": "ASÍ ESTRUCTURAMOS LA DIRECCIÓN DE MARCA",
-      "intro1": "La mayoría de las marcas empieza por diseño o marketing.",
-      "intro2": "En DNM empezamos por consultoría y estrategia.",
-      "subtitle": "Nuestro método organiza la dirección de marca en cuatro fases estratégicas.",
+      "title-prologue": "El método DNM",
+      "title": ["Executive personal branding", "en cuatro fases"],
+      "intro1": "Dirigimos la marca del C-Suite con un proceso de cuatro decisiones. Cada fase tiene un propósito, un entregable y un nivel de compromiso. Cada fase prepara la siguiente.",
       "step_titles": [
-        "Diagnóstico",
-        "Estrategia",
-        "Materialización",
-        "Dirección"
+        ["Diagnóstico", " estratégico"],
+        ["Estrategia", " de marca"],
+        ["Materialización", " cinematográfica"],
+        ["Dirección", " continua"]
       ],
       "step_paragraphs": [
-        "Analizamos tu marca, contexto y decisiones actuales para entender qué necesita realmente.",
-        "Definimos el estilo de comunicación que más te conviene, la narrativa y las direcciones que darán valor a tu marca.",
-        "Estructuramos la estrategia correcta para lograr tus objetivos en el menor tiempo posible.",
-        "Te acompañamos en la implementación de la estrategia para tu proyecto de principio a fin."
+        "Acompañamiento mensual para sostener la coherencia y dirigir la evolución del sistema.",
+        "Sistema de marca personal: posicionamiento, narrativa, sistema verbal y visual.",
+        "Producción con grado fílmico: Brand Films, fotografía editorial y sistema de contenidos.",
+        "Acompañamiento mensual para sostener la coherencia y dirigir la evolución del sistema."
       ]
     },
-    "section_about_us": {
-      "title": "SIN ESTRATEGIA, LA MARCA NO TIENE DIRECCIÓN",
-      "subtitle": "¿QUIÉNES SOMOS?",
-      "btn": "CONOCER DNM"
+    "section_square_banner": {
+      "title-prologue": "Dirección dual",
+      "title": "Tu marca y la de tu empresa, bajo una sola dirección"
     },
-    "section_estrategic_causes": {
+    "section_about_us": {
+      "title": [
+        "DETRÁS DE CADA MARCA QUE FUNCIONA, HAY UNA ",
+        "DECISIÓN ESTRATÉGICA."
+      ],
+      "btn": "Quien es DNM"
+    },
+    "section_estrategic_cases": {
       "title_prologue": "Casos Estratégicos",
-      "title": "CUANDO LA ESTRATEGIA DEFINE LA DIRECCIÓN",
-      "subtitle1": "La estrategia no se demuestra con discurso",
-      "subtitle2": "Se demuestra con decisiones.",
-      "text": "Estos casos muestran cómo la dirección estratégica transforma marcas en la práctica.",
+      "title": ["Liderazgos ", "Dirigidos"],
+      "subtitle": ["Las ", "decisiones ", "prueban el método"],
+      "text": "Cada caso es un liderazgo C-Suite cuya maca personal opera como activo de negocio.",
       "view_all": "Ver todos los casos",
-      "cases_subtitles": [
-        "Parques industriales",
-        "Alto funcionario, empresario & constructor del México moderno",
-        "Construcción | Diseño | Desarrollo ",
-        "Arquitecto relevante en la arquitectura contemporánea mexicana"
-      ],
-      "cases_descriptions": [
-        "Arquitectura de marca para expansión industrial",
-        "Posicionamiento estratégico para liderazgo público",
-        "Estructura de marca para desarrollo arquitectónico.",
-        "Dirección de marca para liderazgo en arquitectura"
-      ],
-      "architect": "Arquitecto",
-      "personal_branding": "Marca Personal",
-      "business_branding": "Marca Empresarial",
-      "explore": "Explorar caso",
-      "prev": "Anterior",
-      "next": "Siguiente"
+      "carousel_cards": {
+        "personal_branding": "Marca Personal",
+        "business_branding": "Marca Empresarial",
+        "architect": "Arquitecto",
+        "cards_intros": [
+          "Construcción de una marca industrial con presencia regional y posicionamiento de clase mundial.",
+          "Identidad de alto nivel para un perfil de influencia y liderazgo nacional.",
+          "Evolución de identidad técnica hacia una marca de diseño y autoría propia.",
+          "Integración de legado e innovación para el liderazgo del mercado arquitectónico."
+        ],
+        "card_subtitles": [
+          "Parques industriales",
+          "Liderazgo empresarial",
+          "Arquitectura y diseño",
+          "Arquitectura residencial"
+        ],
+        "card_descriptions": [
+          "De operador regional a referente industrial de clase mundial.",
+          "Posicionamiento estratégico para influencia nacional.",
+          "Evolución de identidad técnica a marca de autoría.",
+          "Marca personal para referente del sector."
+        ],
+        "explore": "Explorar caso",
+        "prev": "Anterior",
+        "next": "Siguiente"
+      }
     },
     "section_target": {
-      "title": "Para lideres y empresas que  necesitan dirección para su marca"
+      "title": ["Lo que eres merece ", "ser visto"],
+      "subtitle": "Dirigimos la marca que refleja tu verdadero nivel"
     },
     "section_contact": {
-      "title": "Hablemos sobre la dirección de tu marca",
-      "subtitle": "Comparte algunos detalles sobre tu marca y evaluaremos cómo podemos ayudarte",
+      "title": ["Hablemos sobre la ", "dirección ", "de tu marca"],
+      "subtitle": "Comparte el contexto de tu marca. Con esa información definimos si hay una ruta estratégica para trabajar juntos",
+      "socials": "También puedes escribirnos por:",
       "channels": "Otros canales de contacto",
       "form_labels": {
-        "name": "Nombre *",
-        "business_name": "Empresa *",
-        "email": "Correo *",
-        "brand_stage": "Etapa de tu marca *",
+        "name": "Nombre",
+        "business_name": "Empresa / Proyecto",
+        "email": "Correo",
+        "brand_stage": "Etapa de tu marca",
         "challenge": "¿Qué reto estratégico enfrentas?"
       },
       "form_placeholders": {
@@ -175,12 +144,126 @@
           "Consolidación",
           "Transformación | Reposicionamiento"
         ],
-        "challenge": "Describe tu proyecto o necesidad empresarial"
+        "challenge": "Cuéntanos brevemente tu reto de marca..."
       },
-      "form_button": "Contactar"
+      "form_button": "Iniciar conversación",
+      "footer_text": "Todos los derechos reservados."
     },
     "section_footer": {
-      "text": "© 2026 DNM. Todos los derechos reservados."
+      "text": "Todos los derechos reservados."
     }
+  },
+  "about_us": {
+    "section_hero": {
+      "pre-title": "Consultoria y estrategia de marca",
+      "title": ["Detrás de cada decision hay una ", "dirección."],
+      "text": "Somos consultores de marca con un principio claro: pensar, definir y dirigir. En ese orden. Siempre.",
+      "buttons": ["Conoce a DNM", "Conoce al equipo"]
+    },
+    "section_whoAreWe": {
+      "pre-title": "Quienes somos",
+      "title": ["Hacemos ", "Criterio. ", "Y de ahi", "marca"],
+      "text": [
+        "DNM ",
+        "es una consultoría de direccion estrategia para marcas personales y empresariales en crecimiento",
+        " Trabajamos con líderes y empresas que ya tienen valor demostrado y necesitan convertirlo en marca con dirección y posicionamiento claro.",
+        "Vendemos criterio. Lo demás se construye desde ahí."
+      ],
+      "bullet_point_0": [
+        "Analizamos",
+        "Tu contexto, tu mercado, tus decisiones actuales."
+      ],
+      "bullet_point_1": [
+        "Definimos",
+        "La dirección que tu marca necesita tomar."
+      ],
+      "bullet_point_2": ["Acompañamos", "La implementación de principio a fin."]
+    },
+    "section_ourPhilosophy": {
+      "pre-title": "Filosofía",
+      "title": ["Cuatro creencias que ", "rigen ", "nuestro criterio"],
+      "sub-title": "Son los filtros con los que tomamos cada decisión de marca.",
+      "cards_info_0": {
+        "title": ["Primero la decisión", "Después la marca"],
+        "text": "Cada elemento visible — logo, sitio, mensaje — responde a una decisión estratégica previa. Cuando la decisión está clara, el diseño la materializa."
+      },
+      "cards_info_1": {
+        "title": ["La marca se", "dirige."],
+        "text": "Construir marca es ejecución. Dirigirla es criterio. DNM opera desde la dirección: definimos qué se construye, por qué y en qué orden."
+      },
+      "cards_info_2": {
+        "title": ["El contexto define ", "la estrategia."],
+        "text": "Cada marca enfrenta decisiones distintas según su momento, mercado y madurez. La estrategia se construye desde el contexto real, nunca desde una plantilla."
+      },
+      "cards_info_3": {
+        "title": ["Coherencia ", "sobre creatividad."],
+        "text": "Una marca clara y consistente se sostiene en el tiempo. Esa es la coherencia que construimos: que cada decisión refuerce a la anterior."
+      }
+    },
+    "section_ourLeadership": {
+      "pre-title": "Líderes estratégicos",
+      "title": ["Quienes", "dirigen", "tu marca"],
+      "text": "Detrás de cada decisión hay un equipo con criterio. Profesionales que combinan estrategia, dirección creativa y experiencia sectorial para acompañar marcas en sus decisiones más importantes.",
+
+      "cards_info": {
+        "card_0": {
+          "title": "Arq. José Garnica",
+          "subtitle": "Fundador",
+          "text": "Arquitecto de formación, estratega por convicción. Ha dirigido marcas del sector arquitectónico, industrial y de liderazgo profesional, convirtiendo trayectoria en posicionamiento. ",
+          "roles": "DIRECCIÓN ESTRATÉGICA · POSICIONAMIENTO DE MARCAS"
+        },
+        "card_1": {
+          "title": "Ing. Javier Martínez",
+          "subtitle": "Co-fundador",
+          "text": "Ingeniero de formación, estratega de sistemas por vocación. Construyendo metodologías de alto rendimiento, cofunda DNM para llevar ese mismo rigor al terreno de la marca: convertir decisiones en identidad con dirección.",
+          "roles": "SISTEMAS DE MARCA · OPERACIONES ESTRATÉGICAS"
+        }
+      }
+    },
+    "section_OurClientsBanner": {
+      "pre-title": "Empresas & empresarios",
+      "title": "que confían en nosotros"
+    }
+  },
+  "layout": {
+    "section_navbar": {
+      "options": {
+        "aboutUs": "Nosotros",
+        "solutions": "Soluciones",
+        "solutionsList": ["Marca Personal", "Marca Empresarial"],
+        "cases": "Casos",
+        "method": "Método",
+        "contact": "Contacto"
+      },
+      "whatsappBtn": "Platiquemos",
+      "languageBtn": "ES"
+    },
+    "section_footer": {
+      "title": ["Si tu marca necesita", "dirección", "conversemos"],
+      "text": "Comparte el contexto de tu marca. Con esa información definimos si hay una ruta estratégica para trabajar juntos.",
+      "buttons": ["Explorar caso", "Casos estrategicos"],
+      "copyright": "Todos los derechos reservados."
+    }
+  },
+  "welcome_window": {
+    "title": "Bienvenido a DNM",
+    "paragraph1": {
+      "text1": "Esto los estás viendo ",
+      "text2": "solo tú ",
+      "text3": "que asististe a la conferencia."
+    },
+    "paragraph2": {
+      "text1": "Cuando quieras comenzar a impulsar tu ",
+      "text2": "marca personal ",
+      "text3": "o de tu empresa búscanos en este sitio:"
+    },
+    "link": "https://dnm.com",
+    "paragraph3": {
+      "text1": "Pero el ",
+      "text2": "regalo ",
+      "text3": "que te prometió el arquitecto José Garnica está aquí:"
+    },
+    "btn_gift": "OBTENER REGALO",
+    "btn_explore": "EXPLORAR DNM"
   }
 }

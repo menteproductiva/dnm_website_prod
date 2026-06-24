@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 
-export const Footer = () => {
+export const FooterConcept = () => {
   const [visiblePercentage, setVisiblePercentage] = useState(0);
   const footerRef = useRef(null);
 

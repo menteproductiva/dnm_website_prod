@@ -1,21 +1,18 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
-import { Navbar } from "../components/sections/navbar";
+import type { Metadata } from "next";
+// 1. Import Inter from next/font/google
+import { Inter } from "next/font/google";
+import { Navbar } from "../components/sections/layout/navbar";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { setRequestLocale } from "next-intl/server";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  // Optional: If your template uses a CSS variable to apply fonts, you can add it here:
+  // variable: "--font-inter",
 });
 
 export async function generateMetadata({
@@ -64,13 +61,19 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className="overflow-x-hidden">
+      <head>
+        <meta charSet="utf-8" />
+        <meta
+          name="viewport"
+          content="width= device-width, initial-scale=1.0"
+        />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black relative overflow-x-hidden`}
+        className={`${inter.className}  antialiased bg-black relative overflow-x-hidden `}
       >
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Navbar />
           {children}
-          {/* <Footer /> */}
         </NextIntlClientProvider>
       </body>
     </html>

@@ -1,7 +1,7 @@
 {
   "Metadata": {
-    "title": "DNM | Personal and Business Branding Strategy & Consulting",
-    "description": "Strategic consulting for personal and business brands. We guide leaders and companies through diagnosis, strategy, and brand direction. Define the future of your business with DNM.",
+    "title": "DNM | Personal and Business Consulting & Strategy",
+    "description": "Strategic consulting for personal and business branding. We help leaders and companies in their diagnostic, strategy, and brand direction. Define you business route with DNM.",
     "keywords": [
       "brand consulting",
       "personal brand strategy",
@@ -12,159 +12,258 @@
       "business growth"
     ]
   },
-
   "home": {
-    "section_navbar": {
-      "options": {
-        "aboutUs": "About Us",
-        "solutions": "Solutions",
-        "solutionsList": ["Personal Branding", "Business Branding"],
-        "cases": "Cases",
-        "method": "Method",
-        "contact": "Contact"
-      },
-      "whatsappBtn": "Let’s chat",
-      "languageBtn": "EN"
-    },
     "section_hero": {
-      "subtitle": "Personal and business branding strategy and consulting.",
-      "btn": "Know more",
-      "sections_title": ["Your name has traction", "Your business is growing"],
-      "sections_subtitle": [
-        "Now it needs direction.",
-        "Your brand must sustain it."
-      ],
-      "sections_description1": ["PERSONAL BRAND", "BUSINESS BRAND"],
-      "sections_description2": [
-        "for leaders and communicators",
-        "for businesses and companies"
-      ]
+      "title": ["Executive personal branding", "for C-suite"],
+      "title-mobile": ["Executive", "personal", "branding", "for C-suite"],
+      "subtitle": "Your brand, directed",
+      "text": "We manage C-Suite branding as an strategic business asset. With consultive discipline. With filmic grade",
+      "buttons": ["Book a diagnosis", "View solutions"]
     },
-    "welcome_window": {
-      "title": "Welcome to DNM",
-      "paragraph1": {
-        "text1": "This is",
-        "text2": "only for you",
-        "text3": ", who attended the conference."
-      },
-      "paragraph2": {
-        "text1": "When you want to start boosting your",
-        "text2": "personal brand",
-        "text3": "or your company's brand, find us on this site:"
-      },
-      "link": "https://dnm.com",
-      "paragraph3": {
-        "text1": "But the",
-        "text2": "gift",
-        "text3": "that architect José Garnica promised you is here:"
-      },
-      "btn_gift": "CLAIM GIFT",
-      "btn_explore": "EXPLORE DNM"
-    },
+
     "section_introduction": {
-      "title": "TOOLS DO NOT DIRECT",
-      "paragraph1": "Today there are more tools, platforms, and artificial intelligence than ever that never stop creating brands.",
-      "paragraph2": "But most continue to make decisions without a clear strategic direction.",
-      "bullet_point1": "Design without strategy",
-      "bullet_point2": "Marketing without positioning",
-      "bullet_point3": "Growth without structure",
-      "quote1": "Direction is not designed.",
-      "quote2": "It is defined."
+      "title": ["Authority within. ", "Direction ", "outside"],
+      "paragraph1": "Every strategic move by the C-Suite consolidates authority within the company. A directed personal brand turns it into a public asset: market trust, clarity for capital, and attraction of executive talent.",
+      "bullet_points": {
+        "titles": [
+          "Decision that directs",
+          "Presence that materializes",
+          "Continuous direction that sustains"
+        ],
+        "texts": [
+          "Every element of the personal brand stems from judgment.",
+          "Leadership translates into a visual language with cinematic quality.",
+          "The brand operates over time until it becomes a business asset."
+        ]
+      },
+      "quote1": "First the decision.",
+      "quote2": ["Then the ", "brand."]
     },
     "section_solutions": {
       "title-prologue": "STRATEGIC SOLUTIONS",
-      "title": "FOR LEADERS AND GROWING COMPANIES",
-      "title-paragraph": "Strategy is not the same for everyone. We define strategic solutions according to the type of decision your brand must make."
+      "title": ["FOR ", "LEADERS ", "AND ", "GROWING ", "COMPANIES"],
+      "title-paragraph": "Every brand faces different decisions. We define strategic solutions based on the momentum and direction your brand needs."
     },
     "section_branding": {
-      "branding_titles": ["PERSONAL BRANDING", "BUSINESS BRANDING"],
+      "branding_titles": ["PERSONAL BRAND", "BUSINESS BRAND"],
       "branding_subtitles": [
         "For leaders who need direction, not exposure.",
         "For companies that need structure, not improvisation."
       ],
       "branding_texts": [
-        "Strategy is not the same for everyone.  We define routes according to the type of decision your brand must make.",
-        "Growing businesses that require consistency, internal alignment, and strategic direction."
+        "Strategy is not one-size-fits-all. We map out routes based on the type of decision your brand needs to make.",
+        "Growing businesses that require coherence, internal alignment, and strategic direction."
       ],
       "btn": "EXPLORE SOLUTION"
     },
     "section_method": {
-      "title-prologue": "HOW WE WORK",
-      "title": "THIS IS HOW WE STRUCTURE BRAND DIRECTION",
-      "intro1": "Most brands start with design or marketing.",
-      "intro2": "At DNM we start with consulting and strategy.",
-      "subtitle": "Our method organizes brand direction into four strategic phases.",
-      "step_titles": ["Diagnosis", "Strategy", "Materialization", "Direction"],
+      "title-prologue": "The DNM Method",
+      "title": ["Executive personal branding", "in four phases"],
+      "intro1": "We manage C-Suite branding through a four-decision process. Each phase has a purpose, a deliverable, and a level of commitment. Each phase prepares the next.",
+      "step_titles": [
+        ["Strategic", " diagnosis"],
+        ["Brand", " strategy"],
+        ["Cinematic", " materialization"],
+        ["Ongoing", " direction"]
+      ],
       "step_paragraphs": [
-        "We analyze your brand, context, and current decisions to understand what it really needs.",
-        "We define the communication style that suits you best, the narrative, and the directions that will give value to your brand.",
-        "We structure the right strategy to achieve your goals in the shortest time possible.",
-        "We accompany you in the implementation of the strategy for your project from start to finish."
+        "Monthly guidance to sustain consistency and direct the system's evolution.",
+        "Personal brand system: positioning, narrative, verbal and visual system.",
+        "Film-grade production: Brand Films, editorial photography, and content system.",
+        "Monthly guidance to sustain consistency and direct the system's evolution."
       ]
     },
+    "section_square_banner": {
+      "title-prologue": "Dual management",
+      "title": "Your brand and your company's brand, under unified direction"
+    },
     "section_about_us": {
-      "title": "WITHOUT STRATEGY, THE BRAND HAS NO DIRECTION",
-      "subtitle": "WHO ARE WE?",
+      "title": [
+        "BEHIND EVERY BRAND THAT WORKS, THERE IS A ",
+        "STRATEGIC DECISION."
+      ],
       "btn": "MEET DNM"
     },
-    "section_estrategic_causes": {
+    "section_estrategic_cases": {
       "title_prologue": "Strategic Cases",
-      "title": "WHEN STRATEGY DEFINES DIRECTION",
-      "subtitle1": "Strategy is not demonstrated with speech",
-      "subtitle2": "It is demonstrated with decisions.",
-      "text": "These cases show how strategic direction transforms brands in practice.",
+      "title": ["Directed ", "Leaders"],
+      "subtitle": ["Decisions ", "prove ", "the method"],
+      "text": "Each case represents C-Suite leadership whose personal brand operates as a business asset.",
       "view_all": "View all cases",
-      "cases_subtitles": [
-        "Industrial parks",
-        "High-ranking official, businessman & builder of modern Mexico",
-        "Construction | Design | Development",
-        "Relevant architect in contemporary Mexican architecture"
-      ],
-      "cases_descriptions": [
-        "Brand architecture for industrial expansion",
-        "Strategic positioning for public leadership",
-        "Brand structure for architectural development.",
-        "Brand direction for leadership in architecture"
-      ],
-      "architect": "Architect",
-      "personal_branding": "Personal Branding",
-      "business_branding": "Business Branding",
-      "explore": "Explore case",
-      "prev": "Previous",
-      "next": "Next"
+      "carousel_cards": {
+        "personal_branding": "Personal Branding",
+        "business_branding": "Corporate Branding",
+        "architect": "Architect",
+        "cards_intros": [
+          "Building an industrial brand with a regional presence and world-class positioning.",
+          "High-level identity for a profile of national influence and leadership.",
+          "Evolution from a technical identity toward a signature and self-authored brand.",
+          "Integration of legacy and innovation for leadership in the architectural market."
+        ],
+        "card_subtitles": [
+          "Industrial parks",
+          "Business leadership",
+          "Architecture and design",
+          "Residential architecture"
+        ],
+        "card_descriptions": [
+          "From regional operator to world-class industrial benchmark.",
+          "Strategic positioning for national influence.",
+          "Evolution from technical identity to a signature brand.",
+          "Personal brand for an industry benchmark."
+        ],
+        "explore": "Explore case",
+        "prev": "Previous",
+        "next": "Next"
+      }
     },
     "section_target": {
-      "title": "For leaders and companies that  need direction for their brand"
+      "title": ["What you are deserves ", "to be seen"],
+      "subtitle": "We build the brand that reflects your true level"
     },
     "section_contact": {
-      "title": "Let's talk about the direction of your brand",
-      "subtitle": "Share some details about your brand and we will evaluate how we can help you",
+      "title": ["Let's talk about your ", "brand's ", "direction"],
+      "subtitle": "Share your brand's context. With that information, we can determine if there is a strategic path for us to work together",
+      "socials": "You can also write to us via:",
       "channels": "Other contact channels",
       "form_labels": {
-        "name": "Name *",
-        "business_name": "Company *",
-        "email": "Email *",
-        "brand_stage": "Brand stage *",
+        "name": "Name",
+        "business_name": "Company / Project",
+        "email": "Email",
+        "brand_stage": "Your brand's stage",
         "challenge": "What strategic challenge are you facing?"
       },
       "form_placeholders": {
         "name": "Your full name",
-        "business_name": "Your company name",
+        "business_name": "Your company's name",
         "email": "you@company.com",
         "brand_stage": "Select an option",
         "brand_stage_options": [
-          "Start / Pre-launch",
+          "Launch / Pre-launch",
           "Early Growth",
           "Expansion",
           "Consolidation",
-          "Transformation | Repositioning"
+          "Transformation / Repositioning"
         ],
-        "challenge": "Describe your project or business need"
+        "challenge": "Briefly tell us about your brand challenge..."
       },
-      "form_button": "Contact"
+      "form_button": "Start conversation",
+      "footer_text": "All rights reserved."
     },
     "section_footer": {
-      "text": "© 2026 DNM. All rights reserved."
+      "text": "All rights reserved."
     }
+  },
+  "about_us": {
+    "section_hero": {
+      "pre-title": "Brand consulting and strategy",
+      "title": ["Behind every decision, there is a ", "direction."],
+      "text": "We are brand consultants with a clear principle: think, define, and direct. In that order. Always.",
+      "buttons": ["Meet DNM", "Meet the team"]
+    },
+    "section_whoAreWe": {
+      "pre-title": "Who we are",
+      "title": ["We build ", "Criterion. ", "And from there, ", "the brand"],
+      "text": [
+        "DNM ",
+        "is a strategic direction consultancy for growing personal and business brands.",
+        " We work with leaders and companies that already have proven value and need to turn it into a brand with clear direction and positioning.",
+        "We sell criterion. Everything else is built from there."
+      ],
+      "bullet_point_0": [
+        "Analyze",
+        "Your context, your market, your current decisions."
+      ],
+      "bullet_point_1": ["Define", "The direction your brand needs to take."],
+      "bullet_point_2": [
+        "Accompany",
+        "The implementation from start to finish."
+      ]
+    },
+    "section_ourPhilosophy": {
+      "pre-title": "Philosophy",
+      "title": ["Four beliefs that ", "govern ", "our criterion"],
+      "sub-title": "These are the filters we use to make every brand decision.",
+      "cards_info_0": {
+        "title": ["First the decision", "Then the brand"],
+        "text": "Every visible element — logo, site, message — responds to a prior strategic decision. When the decision is clear, design materializes it."
+      },
+      "cards_info_1": {
+        "title": ["The brand is", "directed."],
+        "text": "Building a brand is execution. Directing it is criterion. DNM operates from direction: we define what is built, why, and in what order."
+      },
+      "cards_info_2": {
+        "title": ["Context defines ", "the strategy."],
+        "text": "Every brand faces different decisions depending on its timing, market, and maturity. Strategy is built from real context, never from a template."
+      },
+      "cards_info_3": {
+        "title": ["Coherence ", "over creativity."],
+        "text": "A clear and consistent brand sustains itself over time. That is the coherence we build: ensuring that every decision reinforces the previous one."
+      }
+    },
+    "section_ourLeadership": {
+      "pre-title": "Strategic leaders",
+      "title": ["Who", "directs", "your brand"],
+      "text": "Behind every decision, there is a team with criterion. Professionals who combine strategy, creative direction, and sector expertise to accompany brands through their most important decisions.",
+      "cards_info": {
+        "card_0": {
+          "title": "Arch. José Garnica",
+          "subtitle": "Founder",
+          "text": "Architect by training, strategist by conviction. He has directed brands in the architectural, industrial, and professional leadership sectors, converting trajectory into positioning.",
+          "roles": "STRATEGIC DIRECTION · BRAND POSITIONING"
+        },
+        "card_1": {
+          "title": "Eng. Javier Martínez",
+          "subtitle": "Co-founder",
+          "text": "Engineer by training, systems strategist by vocation. Building high-performance methodologies, he co-founded DNM to bring that same rigor to the branding field: turning decisions into identity with direction.",
+          "roles": "BRAND SYSTEMS · STRATEGIC OPERATIONS"
+        }
+      }
+    },
+    "section_OurClientsBanner": {
+      "pre-title": "Companies & entrepreneurs",
+      "title": "who trust us"
+    }
+  },
+  "layout": {
+    "section_navbar": {
+      "options": {
+        "aboutUs": "About Us",
+        "solutions": "Solutions",
+        "solutionsList": ["Personal Brand", "Business Brand"],
+        "cases": "Cases",
+        "method": "Method",
+        "contact": "Contact"
+      },
+      "whatsappBtn": "Let's talk",
+      "languageBtn": "EN"
+    },
+    "section_footer": {
+      "title": ["If your brand needs", "direction,", "let's talk"],
+      "text": "Share your brand's context. With that information, we'll define if there is a strategic path for us to work together.",
+      "buttons": ["Explore case", "Strategic cases"],
+      "copyright": "All rights reserved."
+    }
+  },
+  "welcome_window": {
+    "title": "Welcome to DNM",
+    "paragraph1": {
+      "text1": "This is being viewed",
+      "text2": "exclusively by you",
+      "text3": "who attended the conference."
+    },
+    "paragraph2": {
+      "text1": "When you want to start boosting your",
+      "text2": "personal brand",
+      "text3": "or your company's brand, find us on this site:"
+    },
+    "link": "https://dnm.com",
+    "paragraph3": {
+      "text1": "But the",
+      "text2": "gift",
+      "text3": "promised to you by architect José Garnica is right here"
+    },
+    "btn_gift": "GET GIFT",
+    "btn_explore": "EXPLORE DNM"
   }
 }

@@ -20,11 +20,11 @@ export const SectionSeparator = () => {
     return () => observer.disconnect();
   }, []);
   return (
-    <div className="z-10 relative bg-black w-full h-1 overflow-visible">
+    <div className="z-10 relative bg-black w-full h-1 overflow-visible pointer-events-none">
       {/* LINE  */}
       <svg
         className="mx-auto h-full object-fill"
-        style={{ width: `${50 + visiblePercentage / 2}%` }}
+        style={{ width: `${25 + visiblePercentage / 1.5}%` }}
       >
         <defs>
           <radialGradient
@@ -48,7 +48,7 @@ export const SectionSeparator = () => {
           >
             <stop offset="0%" stopColor="transparent" stopOpacity="0" />
             <stop offset="20%" stopColor="#9f6637" stopOpacity="0.5" />
-            <stop offset="50%" stopColor="white" stopOpacity="0.25" />
+            <stop offset="50%" stopColor="white" stopOpacity="0.5" />
             <stop offset="80%" stopColor="#9f6637" stopOpacity="0.5" />
             <stop offset="100%" stopColor="transparent" stopOpacity="0" />
           </linearGradient>
@@ -64,7 +64,7 @@ export const SectionSeparator = () => {
       </svg>
       {/* GLOW  */}
       <svg
-        className="z-50 w-full h-96 object-fill overflow-hidden"
+        className="z-50 w-full h-screen object-fill overflow-hidden"
         ref={sectionRef}
       >
         <defs>
@@ -99,6 +99,7 @@ export const SectionSeparator = () => {
           cx="50%"
           cy="0%"
           ry={`${visiblePercentage >= 10 ? visiblePercentage - 10 : 0}%`} // ternary used to prevent radius from going into negative values
+          rx={`${visiblePercentage >= 10 ? visiblePercentage / 1.5 : 0}%`} // ternary used to prevent radius from going into negative values
           fill="url(#radialGlowIntro)"
           opacity={0.8}
           stroke="white"

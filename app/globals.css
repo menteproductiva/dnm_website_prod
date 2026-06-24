@@ -91,57 +91,6 @@
   --animate-left-scroll: infinite-scroll 15s linear infinite;
   --animate-upside-down: upsideDown .2s linear forwards;
 
-  @keyframes upsideDown {
-    from {
-      transform: rotate(0deg);
-    }
-
-    to {
-      transform: rotate(180deg);
-    }
-  }
-
-  @keyframes spotlight {
-    0% {
-      opacity: 0;
-      transform: translate(-72%, -62%) scale(0.5);
-    }
-
-    100% {
-      opacity: 1;
-      transform: translate(-50%, -40%) scale(1);
-    }
-  }
-
-  @keyframes FadeIn {
-    0% {
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @keyframes RadarRotation {
-
-    0%,
-    100% {
-      transform: rotate(0deg);
-      opacity: 0;
-    }
-
-    20%,
-    60% {
-      opacity: .7;
-    }
-
-    80% {
-      transform: rotate(180deg);
-      opacity: 0;
-    }
-  }
-
 }
 
 :root {
@@ -161,59 +110,74 @@
   --color-neutral1-800: #878786;
   --color-neutral1-900: #676766;
   /* Neutral 2  */
-  --color-neutral2-50: #e6e6e6;
-  --color-neutral2-100: #b0b0b0;
-  --color-neutral2-200: #8a8a8a;
-  --color-neutral2-300: #545454;
-  --color-neutral2-400: #333333;
-  --color-neutral2-500: #000000;
+  --color-neutral2-50: #f8f8f7;
+  --color-neutral2-100: #e8e8e7;
+  --color-neutral2-200: #dddddc;
+  --color-neutral2-300: #cdcdcc;
+  --color-neutral2-400: #c3c3c2;
+  --color-neutral2-500: #b4b4b3;
+  --color-neutral2-600: #a4a4a3;
+  --color-neutral2-700: #80807f;
+  --color-neutral2-800: #636362;
+  --color-neutral2-900: #4c4c4b;
+  /* Neutral Group 3 */
+  --color-neutral3-50: #ededec;
+  --color-neutral3-100: #c8c7c5;
+  --color-neutral3-200: #adaba9;
+  --color-neutral3-300: #888582;
+  --color-neutral3-400: #716d6a;
+  --color-neutral3-500: #4d4945;
+  --color-neutral3-600: #46423f;
+  --color-neutral3-700: #373431;
+  --color-neutral3-800: #2a2826;
+  --color-neutral3-900: #201f1d;
 
   /* Primary 1 */
-  --colors-primary1-50: #e9e8e7;
-  --colors-primary1-100: #b9b7b6;
-  --colors-primary1-200: #989592;
-  --colors-primary1-300: #686460;
-  --colors-primary1-400: #4b4641;
-  --colors-primary1-500: #1e1812;
-  --colors-primary1-600: #1b1610;
-  --colors-primary1-700: #15110d;
-  --colors-primary1-800: #110d0a;
-  --colors-primary1-900: #0d0a08;
+  --color-primary1-50: #e7e7e7;
+  --color-primary1-100: #b4b4b3;
+  --color-primary1-200: #90908e;
+  --color-primary1-300: #5d5d5b;
+  --color-primary1-400: #3d3d3b;
+  --color-primary1-500: #0d0d0a;
+  --color-primary1-600: #0c0c09;
+  --color-primary1-700: #090907;
+  --color-primary1-800: #070706;
+  --color-primary1-900: #050504;
   /* Primary 2 */
-  --color-primary2-50: #f9f0ea;
-  --color-primary2-100: #ecd0bd;
-  --color-primary2-200: #e3ba9d;
-  --color-primary2-300: #d79a71;
-  --color-primary2-400: #cf8655;
-  --color-primary2-500: #c3682b;
-  --color-primary2-600: #b15f27;
-  --color-primary2-700: #8a4a1f;
-  --color-primary2-800: #6b3918;
-  --color-primary2-900: #522c12;
+  --color-primary2-50: #f9f2e9;
+  --color-primary2-100: #eed5bc;
+  --color-primary2-200: #e5c19b;
+  --color-primary2-300: #d9a56e;
+  --color-primary2-400: #d29351;
+  --color-primary2-500: #c77826;
+  --color-primary2-600: #b56d23;
+  --color-primary2-700: #8d551b;
+  --color-primary2-800: #6d4215;
+  --color-primary2-900: #543210;
 
   /* Secundary 1 */
   --color-secundary1-50: #e7e7e7;
-  --color-secundary1-100: #b4b4b3;
-  --color-secundary1-200: #90908e;
-  --color-secundary1-300: #5d5d5b;
-  --color-secundary1-400: #3d3d3b;
-  --color-secundary1-500: #0d0d0a;
-  --color-secundary1-600: #0c0c09;
-  --color-secundary1-700: #090907;
-  --color-secundary1-800: #070706;
-  --color-secundary1-900: #050504;
+  --color-secundary1-100: #b5b4b4;
+  --color-secundary1-200: #92908f;
+  --color-secundary1-300: #605e5c;
+  --color-secundary1-400: #413e3d;
+  --color-secundary1-500: #110e0c;
+  --color-secundary1-600: #0f0d0b;
+  --color-secundary1-700: #0c0a09;
+  --color-secundary1-800: #090807;
+  --color-secundary1-900: #070605;
 
   /* Secundary 2 */
-  --color-secundary2-50: #fffdfb;
-  --color-secundary2-100: #fef8f2;
-  --color-secundary2-200: #fdf5ec;
-  --color-secundary2-300: #fcf0e4;
-  --color-secundary2-400: #fcedde;
-  --color-secundary2-500: #fbe9d6;
-  --color-secundary2-600: #e4d4c3;
-  --color-secundary2-700: #b2a598;
-  --color-secundary2-800: #8a8076;
-  --color-secundary2-900: #69625a;
+  --color-secundary2-50: #e7e7e7;
+  --color-secundary2-100: #b5b4b4;
+  --color-secundary2-200: #92908f;
+  --color-secundary2-300: #605e5c;
+  --color-secundary2-400: #413e3d;
+  --color-secundary2-500: #110e0c;
+  --color-secundary2-600: #0f0d0b;
+  --color-secundary2-700: #0c0a09;
+  --color-secundary2-800: #090807;
+  --color-secundary2-900: #070605;
 }
 
 [data-theme="dark"] {
@@ -252,12 +216,12 @@
   --color-primary1-800: #110d0a;
   --color-primary1-900: #0d0a08;
   /* Primary 2 */
-  --color-primary2-50: #f9f0ea;
-  --color-primary2-100: #ecd0bd;
-  --color-primary2-200: #e3ba9d;
-  --color-primary2-300: #d79a71;
+  --color-primary2-50: #f9f2e9;
+  --color-primary2-100: #eed5bc;
+  --color-primary2-200: #e5c19b;
+  --color-primary2-300: #d9a56e;
   --color-primary2-400: #cf8655;
-  --color-primary2-500: #c3682b;
+  --color-primary2-500: #c77826;
   --color-primary2-600: #b15f27;
   --color-primary2-700: #8a4a1f;
   --color-primary2-800: #6b3918;
@@ -294,23 +258,160 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* -------------------- ANIMATIONS -------------------- */
-@keyframes HoverFrames {
-  from {
-    transform: translate(0%, 0%);
+/* ---------------------------------------- Custom Classes ---------------------------------------- */
+/* >>>>> Title Prologues Class <<<<< */
+h1 {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: var(--color-primary2-500);
+  width: 100%;
+}
+/* sm - Small */
+@media (min-width: 640px) { 
+  h1 {
+    font-size: 1.25rem;
+  }
+}
+/* md - Medium */
+@media (min-width: 768px) { 
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+/* lg - Large */
+@media (min-width: 1024px) { 
+  h1 {
+    font-size: 1.25rem;
+  }
+}
+/* xl - Extra Large */
+@media (min-width: 1280px) { 
+    h1 {
+    font-size: 1rem;
   }
 
-  to {
-    transform: translate(0%, 2%);
+}
+/* 2xl - Extra Extra Large */
+@media (min-width: 1536px) {
+   h1 {
+    font-size: 1.25rem;
   }
+ }
+
+/* >>>>>>>>>> Titles Class <<<<<<<<<< */
+h2 {
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  color: white;
+  text-transform: uppercase;
+}
+/* sm - Small */
+@media (min-width: 640px) { 
+  h2 {
+    font-size: 1.875rem; /* text-3xl */
+  }
+}
+/* md - Medium */
+@media (min-width: 768px) { 
+  h2 {
+    font-size: 2.25rem; /* text-4xl */
+  }
+}
+/* lg - Large */
+@media (min-width: 1024px) { 
+  h2 {
+    font-size: 2.25rem; /* text-5xl */
+  }
+}
+/* xl - Extra Large */
+@media (min-width: 1280px) { 
+  h2 {
+    font-size: 2.5rem;
+  }
+}
+/* 2xl - Extra Extra Large */
+@media (min-width: 1536px) { }
+
+
+/* ---------------------------------------- ANIMATIONS ---------------------------------------- */
+@keyframes HoverFrames {
+  from  { transform: translate(0%, 0%); }
+  to    { transform: translate(0%, 2%); }
 }
 
 @keyframes OpacityFrames {
-  from {
-    opacity: 0;
+  from  { opacity: 0; }
+  to    { opacity: 1; }
+}
+
+@keyframes upsideDown {
+    from  { transform: rotate(0deg);   }
+    to    { transform: rotate(180deg); }
   }
 
-  to {
-    opacity: 1;
-  }
+@keyframes spotlight {
+  0%    {   opacity: 0;   transform: translate(-72%, -62%) scale(0.5);  }
+  100%  {   opacity: 1;   transform: translate(-50%, -40%) scale(1);    }
+}
+
+@keyframes slideFromRight {
+  0%    {   opacity: 0;   transform: translate(100%, 0%) ;  }
+  100%  {   opacity: 1;   transform: translate(  0%, 0%) ;  }
+}
+
+@keyframes FadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes RadarRotation {
+  0%    {   opacity: 0.0; transform: rotate(0deg);    }
+  20%   {   opacity: 0.7; }
+  60%   {   opacity: 0.7; }
+  80%   {   opacity: 0.0; transform: rotate(180deg);  }
+  100%  {   opacity: 0.0; transform: rotate(0deg);    }
+}
+
+@keyframes GrowInHorizontal {
+  0%   {  width: 0%;    }
+  100% {  width: 100%;  }
+}
+@keyframes GrowInVertical {
+  0%   {  height: 0%;    }
+  100% {  height: 100%;  }
+}
+
+/* >>>>>>>>>> Contact Form Animations <<<<<<<<<< */
+@keyframes FlashBang {
+  0%    {    opacity: 0.0; transform: scale(0.2, 0.5);    }
+  50%   {    opacity: 1.0; transform: scale(1.5, 2.0); }
+  100%  {    opacity: 0.5; transform: scale(1.0, 1.0);  }
+}
+
+@keyframes SlideFromBottom {
+  0%    {   opacity: 0;   transform: translate(  0%, 50%) ;  }
+  100%  {   opacity: 1;   transform: translate(  0%,  0%) ;  }
+}
+
+@keyframes ZoomOut {
+  0%    {   transform: scale(120%) ;  }
+  100%  {   transform: scale(100%) ;  }
+}
+  
+
+
+
+/* -------------------- FIGMA STYLES -------------------- */
+
+.Title {
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 3.5rem;
+  line-height: 1.2;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }

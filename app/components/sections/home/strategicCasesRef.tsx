@@ -2,7 +2,7 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useState, useRef } from "react";
-import { ArrowRightUp } from "../icons/icons";
+import { ArrowRightUp } from "../../icons/icons";
 
 export const StrategicCases = () => {
   const t = useTranslations("home.section_estrategic_causes");
@@ -82,7 +82,10 @@ const Carousel = () => {
     if (scrollRef.current) {
       const cardEl = scrollRef.current.firstElementChild as HTMLElement;
       if (cardEl) {
-        scrollRef.current.scrollBy({ left: -(cardEl.clientWidth + 20), behavior: "smooth" });
+        scrollRef.current.scrollBy({
+          left: -(cardEl.clientWidth + 20),
+          behavior: "smooth",
+        });
       }
     }
   };
@@ -90,7 +93,10 @@ const Carousel = () => {
     if (scrollRef.current) {
       const cardEl = scrollRef.current.firstElementChild as HTMLElement;
       if (cardEl) {
-        scrollRef.current.scrollBy({ left: cardEl.clientWidth + 20, behavior: "smooth" });
+        scrollRef.current.scrollBy({
+          left: cardEl.clientWidth + 20,
+          behavior: "smooth",
+        });
       }
     }
   };
@@ -99,7 +105,9 @@ const Carousel = () => {
     if (scrollRef.current) {
       const cardEl = scrollRef.current.firstElementChild as HTMLElement;
       if (cardEl) {
-        const index = Math.round(scrollRef.current.scrollLeft / (cardEl.clientWidth + 20));
+        const index = Math.round(
+          scrollRef.current.scrollLeft / (cardEl.clientWidth + 20),
+        );
         setCurrentSlide(index);
       }
     }
@@ -109,25 +117,28 @@ const Carousel = () => {
     if (scrollRef.current) {
       const cardEl = scrollRef.current.firstElementChild as HTMLElement;
       if (cardEl) {
-        scrollRef.current.scrollTo({ left: (cardEl.clientWidth + 20) * index, behavior: "smooth" });
+        scrollRef.current.scrollTo({
+          left: (cardEl.clientWidth + 20) * index,
+          behavior: "smooth",
+        });
       }
     }
   };
 
   return (
-    <div className="relative flex flex-col gap-5 lg:px-0 overflow-hidden w-full max-w-[100vw]">
+    <div className="relative flex flex-col gap-5 lg:px-0 w-full max-w-[100vw] overflow-hidden">
       {/* -------------------- Carousel wrapper --------------------  */}
       <div
         ref={scrollRef}
         onScroll={handleScroll}
-        className="flex flex-row overflow-x-auto snap-x snap-mandatory scroll-smooth w-full px-5 md:px-10 lg:px-0"
+        className="flex flex-row px-5 md:px-10 lg:px-0 w-full overflow-x-auto scroll-smooth snap-mandatory snap-x"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {/* -------------------- Carousel Cards --------------------  */}
         {slides.map((slide, index) => (
           <div
             key={`method-card-${index}`}
-            className="relative w-full sm:w-[85%] md:w-[60%] lg:w-[45%] xl:w-[30%] shrink-0 snap-center mr-5 last:mr-0 h-96 transition-transform duration-500 ease-in-out"
+            className="relative mr-5 last:mr-0 w-full sm:w-[85%] md:w-[60%] lg:w-[45%] xl:w-[30%] h-96 transition-transform duration-500 ease-in-out snap-center shrink-0"
           >
             <CarouselCard
               title={slide.title}
@@ -143,7 +154,10 @@ const Carousel = () => {
       </div>
       {/* -------------------- Carousel Slider --------------------  */}
       <div className="flex flex-row justify-center gap-2 mt-4 text-white hover:text-white">
-        <p onClick={handlePrev} className="flex flex-row gap-2 cursor-pointer items-center mr-2">
+        <p
+          onClick={handlePrev}
+          className="flex flex-row items-center gap-2 mr-2 cursor-pointer"
+        >
           <Image
             src={"/icons/arrow-up.svg"}
             width={15}
@@ -153,7 +167,7 @@ const Carousel = () => {
           />
           <span className="hidden sm:block">{t("prev")} </span>
         </p>
-        
+
         {slides.map((_, index) => (
           <CarouselStep
             key={`method-carousel-${index}`}
@@ -163,7 +177,10 @@ const Carousel = () => {
           />
         ))}
 
-        <p onClick={handleNext} className="flex flex-row gap-2 cursor-pointer items-center ml-2">
+        <p
+          onClick={handleNext}
+          className="flex flex-row items-center gap-2 ml-2 cursor-pointer"
+        >
           <span className="hidden sm:block">{t("next")}</span>
           <Image
             src={"/icons/arrow-up.svg"}
