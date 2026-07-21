@@ -11,9 +11,7 @@ import { ContactForm } from "../components/sections/home/contactForm";
 import { BannerGlow } from "../components/sections/home/footerGlow";
 import { MediaQueryIndicator } from "../components/mediaQueryIndicator";
 import { SquareBanner } from "../components/sections/home/squareBanner";
-import { NecoArc } from "../components/sections/conceptual/neco_arc";
-import { TacoButton } from "../components/sections/conceptual/tacoButton";
-import { SushiButton } from "../components/sections/conceptual/sushiButton";
+
 
 export default function Home() {
   return (
@@ -39,8 +37,6 @@ export default function Home() {
             <Introduction />
           </div>
         </div>
-        {/* <NecoArc /> */}
-
         {/* ----- Section 03 ----- */}
         {/* <div className="px-2 lg:px-0">
           <div className="lg:mx-auto lg:w-3/4">
