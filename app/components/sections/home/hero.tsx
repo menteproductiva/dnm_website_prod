@@ -10,9 +10,7 @@ import GlowBackground from "../../glowBackground";
 import { ArrowRightUp } from "../../icons/icons";
 
 export const Hero = () => {
-  const [showModal, setShowModal] = useState(false);
   const t = useTranslations("home.section_hero");
-  const searchParams = useSearchParams();
 
   const AnimationA = {
     transformOrigin: "50% 60%",
@@ -22,6 +20,9 @@ export const Hero = () => {
     animationFillMode: "backwards",
   };
 
+  // -------------------- Check if URL comes from a conference --------------------
+  const [showModal, setShowModal] = useState(false);
+  const searchParams = useSearchParams();
   useEffect(() => {
     // Check if the specific query param exists
     const conferenceId = searchParams.get("conference-id");
@@ -35,10 +36,8 @@ export const Hero = () => {
     <>
       <Modal isVisible={showModal} setIsVisible={setShowModal} />
       <div className="relative">
-        {/* -------------------- FILLER --------------------  */}
-        <div className="relative h-[92svh] pointer-events-none" />
         {/* -------------------- ACTUAL CONTENT -------------------- */}
-        <div className="top-0 left-0 fixed lg:px-0 w-screen h-[92svh]">
+        <div className="top-0 left-0 fixed lg:px-0 w-screen h-[97svh]">
           <section
             className={`top-0  px-4 lg:px-0 lg:w-3/4  relative flex flex-col justify-around  items-center py-10 md:py-20 lg:pt-20 lg:pb-10 xl:pb-5 mx-auto h-full `}
           >
@@ -76,7 +75,7 @@ export const Hero = () => {
                 className="flex flex-col mt-20 lg:font-semibold text-white uppercase 2xl:leading-18 xl:leading-15"
                 style={{
                   ...AnimationA,
-                  animationDelay: "2s",
+                  animationDelay: "1.5s",
                 }}
               >
                 <span className="text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl">
@@ -89,17 +88,17 @@ export const Hero = () => {
 
               {/* Subtitle  */}
               <div
-                className="flex flex-col gap-4 mt-2 w-full"
+                className="flex flex-col gap-4 mt-3 w-full"
                 style={{
                   ...AnimationA,
-                  animationDelay: "3s",
+                  animationDelay: "2s",
                 }}
               >
                 <h1 style={{ textTransform: "none" }}>
-                  <span className="text-xl">{t("subtitle")}</span>
+                  <span className="text-4xl">{t("subtitle")}</span>
                 </h1>
 
-                <p>{t("text")}</p>
+                <p className="lg:text-xl">{t("text")}</p>
               </div>
 
               {/* Buttons  */}
@@ -107,12 +106,12 @@ export const Hero = () => {
                 className="flex flex-row gap-5 mt-18 w-full items center"
                 style={{
                   ...AnimationA,
-                  animationDelay: "4s",
+                  animationDelay: "2.5s",
                 }}
               >
                 <Link
                   href="#section-contact-form"
-                  className="group flex flex-row items-center gap-2 bg-primary2-500 px-5 py-2 rounded-xl uppercase"
+                  className="group flex flex-row items-center gap-2 bg-primary2-500 hover:bg-primary2-700 px-5 py-2 rounded-xl uppercase duration-500"
                 >
                   {t("buttons.0")}
                   <ArrowRightUp
@@ -122,7 +121,7 @@ export const Hero = () => {
                   />
                 </Link>
                 <Link
-                  href="#section-method"
+                  href="#section-cases"
                   className="flex flex-row items-center gap-2 hover:bg-primary2-500 px-5 py-2 border border-primary2-500 rounded-xl uppercase duration-500"
                 >
                   {t("buttons.1")}

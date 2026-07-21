@@ -56,7 +56,7 @@ export const AboutUs = () => {
         ref={sectionRef}
       >
         {/* ------------------- Content ------------------- */}
-        <div className="flex lg:flex-row flex-col bg-neutral2-500/10 drop-shadow-white w-full overflow-hidden">
+        <div className="flex lg:flex-row flex-col drop-shadow-white w-full overflow-hidden">
           {/* -------------------- Left Side - Text  -------------------- */}
           <div className="relative flex flex-col gap-5 md:gap-5 lg:gap-10 my-auto py-10 w-full h-full">
             {/* Title  */}
@@ -76,11 +76,15 @@ export const AboutUs = () => {
               className="flex flex-col items-center lg:items-start mx-auto w-full lg:w-3/5 text-white"
               style={
                 isIntersected
-                  ? { ...Animation, animationDelay: "1s" }
+                  ? { ...Animation, animationDelay: "0.5s" }
                   : { opacity: 0 } // Keep element hidden till animation triggers
               }
             >
-              <Button link="/" text={t("btn")} className="bg-primary2-500" />
+              <Button
+                link="/about_us"
+                text={t("btn")}
+                className="bg-primary2-500" //
+              />
             </div>
           </div>
           {/* -------------------- Right Side - Image -------------------- */}
@@ -93,7 +97,7 @@ export const AboutUs = () => {
               height={1000}
               style={
                 isIntersected
-                  ? { ...AnimationImage, animationDelay: "1s" }
+                  ? { ...AnimationImage, animationDelay: ".5s" }
                   : { transform: "scale(120%)" } // Keep element hidden till animation triggers
               }
             />

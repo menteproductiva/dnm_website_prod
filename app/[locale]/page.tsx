@@ -11,12 +11,23 @@ import { ContactForm } from "../components/sections/home/contactForm";
 import { BannerGlow } from "../components/sections/home/footerGlow";
 import { MediaQueryIndicator } from "../components/mediaQueryIndicator";
 import { SquareBanner } from "../components/sections/home/squareBanner";
+import { NecoArc } from "../components/sections/conceptual/neco_arc";
+import { TacoButton } from "../components/sections/conceptual/tacoButton";
+import { SushiButton } from "../components/sections/conceptual/sushiButton";
 
 export default function Home() {
   return (
     <main className="relative justify-center items-center bg-black dark:bg-black font-sans">
       {/* <MediaQueryIndicator /> */}
-      <Hero />
+
+      <section id="section-hero">
+        <Hero />
+      </section>
+      {/* -------------------- FILLER --------------------  */}
+      <div
+        className="relative h-[97svh] pointer-events-none"
+        id="hero-filler"
+      />
 
       <div className="relative flex flex-col gap-10 bg-black overflow-x-hidden">
         <div className="px-2 lg:px-0">
@@ -28,6 +39,8 @@ export default function Home() {
             <Introduction />
           </div>
         </div>
+        {/* <NecoArc /> */}
+
         {/* ----- Section 03 ----- */}
         {/* <div className="px-2 lg:px-0">
           <div className="lg:mx-auto lg:w-3/4">
@@ -58,8 +71,8 @@ export default function Home() {
           </div>
         </div>
         {/* ----- Section 06 - Carousel ----- */}
-        <div className="px-2 lg:px-0" id="section-cases">
-          <div className="xl:px-[100px]">
+        <div className="px-2 lg:px-0 pt-10" id="section-cases">
+          <div className="xl:px-25">
             <StrategicCases />
           </div>
         </div>

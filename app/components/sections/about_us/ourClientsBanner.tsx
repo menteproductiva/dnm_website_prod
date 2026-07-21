@@ -6,15 +6,22 @@ export const OurClientsBanner = () => {
   const t = useTranslations("about_us.section_OurClientsBanner");
 
   return (
-    <section className="relative flex flex-col justify-around items-center gap-7 xl:gap-9 bg-slate-900/50 mx-auto px-0 py-20 w-full h-full">
+    <section className="relative flex flex-col justify-around items-center gap-7 xl:gap-9 bg-primary1-900 mx-auto px-0 py-20 w-full h-full">
       {/* ----------  Top ----------   */}
       <div className="flex flex-col justify-between gap-5 w-full text-white">
-        <h1 className="w-full text-center">{t("pre-title")}</h1>
-        <p className="w-full text-center uppercase">{t("pre-title")}</p>
+        <h1
+          className="w-full text-center"
+          style={{
+            fontSize: "1.5rem",
+          }}
+        >
+          <span className="md:text-2xl">{t("pre-title")}</span>
+        </h1>
+        <p className="w-full md:text-5xl text-center uppercase">{t("title")}</p>
       </div>
 
       {/* ---------- Banner ----------   */}
-      <div className="flex flex-row w-full overflow-visible text-white">
+      <div className="flex flex-row w-full overflow-visible text-white scale-200 md:scale-100">
         <BannerContent />
         <BannerContent />
       </div>
@@ -70,7 +77,7 @@ const BannerContent = ({}: {}) => {
               flexShrink: 0,
               flexGrow: 1,
             }}
-            className="border-blue-500 w-full"
+            className={` border-blue-500 w-full h-20  ${image === "elite" && "p-3"} ${image === "jgs" && "p-2"} ${image === "a_j_garnica" && "p-2"}`}
           />
         </div>
       ))}

@@ -1,6 +1,6 @@
 export const MediaQueryIndicator = () => {
   return (
-    <div className="bottom-10 left-10 z-50 fixed rounded-xl w-auto h-auto overflow-hidden text-2xl">
+    <div className="bottom-10 left-10 z-50 fixed rounded-xl w-auto h-auto overflow-hidden text-2xl pointer-events-none">
       <p className="md:hidden bg-green-500 px-5 py-2">SM: Mobile</p>
       <p className="hidden lg:hidden md:block bg-blue-500 px-5 py-2">
         MD: Tablet

@@ -20,37 +20,31 @@ export const Method = () => {
   const { intersecting } = useElementIntersectsScreen(containerRef);
   // -----------------------------------------------------------------------------------------------------
 
-  // -------------------- Auto-navigate carousel when it enters screen -----------------------
   useEffect(() => {
-    // Only trigger the sequence if the element is intersecting
     if (!intersecting) return;
 
     let intervalId: NodeJS.Timeout;
+    let executionCount = 0;
+    const totalTransitionsNeeded = totalSteps; // 3 transitions to get to index 3, +1 to loop back to 0
 
-    // 1. Initial 3-second delay
     const delayId = setTimeout(() => {
-      // 2. Start the 1-second interval to transition slides
       intervalId = setInterval(() => {
-        setCurrentSlide((prevSlide) => {
-          const nextSlide = prevSlide + 1;
+        executionCount++;
 
-          // 3. Stop the interval once we reach the final step (index 3 for 4 steps)
-          if (nextSlide >= totalSteps - 1) {
-            clearInterval(intervalId);
-          }
+        if (executionCount >= totalTransitionsNeeded) {
+          setCurrentSlide(0);
+          clearInterval(intervalId);
+        } else {
+          setCurrentSlide((prev) => prev + 1);
+        }
+      }, 1000);
+    }, 3000);
 
-          return nextSlide;
-        });
-      }, 1000); // 1-second interval
-    }, 3000); // 3-second delay
-
-    // Cleanup timers if the component unmounts or intersecting changes
     return () => {
       clearTimeout(delayId);
       if (intervalId) clearInterval(intervalId);
     };
   }, [intersecting, totalSteps]);
-  // -----------------------------------------------------------------------------------------------------
 
   return (
     <section
@@ -60,7 +54,7 @@ export const Method = () => {
     >
       {/* -------------------- Corner Glow -------------------- */}
       <svg
-        className="top-0 left-0 absolute border-red-500 w-full h-full overflow-visible ratio-square"
+        className="top-0 left-0 absolute border-red-500 w-full h-full overflow-visible pointer-events-none ratio-square"
         stroke="white"
         strokeWidth={0}
         style={
@@ -99,7 +93,7 @@ export const Method = () => {
       </svg>
 
       {/* -------------------- Header -------------------- */}
-      <div className="relative flex flex-col items-center m-auto px-5 w-full lg:w-2/3 text-white">
+      <div className="relative flex flex-col items-center m-auto px-5 md:px-0 w-full lg:w-3/4 text-white">
         {/* Como trabajamos  */}
         <h1
           className="text-center"
@@ -113,10 +107,10 @@ export const Method = () => {
         </h1>
         {/* ASI ESTRUCTURAMOS...  */}
         <h2
-          className="flex flex-col mx-auto pt-3 w-3/4 lg:w-full text-neutral2-500 text-center"
+          className="flex flex-col mx-auto pt-3 lg:w-full text-neutral2-500 text-center"
           style={
             intersecting
-              ? { ...Animation, animationDelay: `${1}s` }
+              ? { ...Animation, animationDelay: `${0.5}s` }
               : { opacity: 0 }
           }
         >
@@ -127,11 +121,13 @@ export const Method = () => {
           className="flex flex-col pt-12 text-lg"
           style={
             intersecting
-              ? { ...Animation, animationDelay: `${2}s` }
+              ? { ...Animation, animationDelay: `${1}s` }
               : { opacity: 0 }
           }
         >
-          <span className="w-full text-center">{t("intro1")}</span>
+          <span className="w-full text-neutral2-500 text-center">
+            {t("intro1")}
+          </span>
         </p>
       </div>
 
@@ -160,7 +156,7 @@ const Carousel = ({
   const t = useTranslations("home.section_method");
 
   return (
-    <div className="relative flex flex-col px-5 md:px-10 lg:px-0">
+    <div className="relative flex flex-col px-5 md:px-0 lg:px-0">
       <div className="relative flex flex-row justify-between w-full">
         {new Array(totalSteps).fill(null).map((_, index) => (
           <CarouselStep
@@ -178,7 +174,7 @@ const Carousel = ({
         className="relative w-full h-40 lg:h-30"
         style={
           startAnimation
-            ? { ...Animation, animationDelay: `3s` }
+            ? { ...Animation, animationDelay: `1.5s` }
             : { opacity: 0 }
         }
       >
@@ -215,7 +211,7 @@ const CarouselStep = ({
       className="flex flex-col items-center gap-7 w-1/4"
       style={
         startAnimation
-          ? { ...Animation, animationDelay: `${index + 3}s` }
+          ? { ...Animation, animationDelay: `${index + 2}s` }
           : { opacity: 0 }
       }
     >
@@ -272,8 +268,8 @@ const CarouselStep = ({
             />
           </g>
         </svg>
-        <div
-          className={`z-10 flex relative p-1 cursor-pointer mx-auto  duration-500 bg-black shadow-primary2-500 rounded-full h-12 outline-2 w-12 md:h-15 md:w-15 
+        <button
+          className={`z-10 flex  relative p-1 cursor-pointer mx-auto  duration-500 bg-black shadow-primary2-500 rounded-full h-12 outline-2 w-12 md:h-15 md:w-15 
           ${step == index ? "text-primary2-500 outline-primary2-500 shadow-lg " : "text-neutral1-700  outline-neutral1-700"}`}
           onClick={() => {
             setStep(index);
@@ -282,7 +278,7 @@ const CarouselStep = ({
           <p className="m-auto w-min h-min font-semibold text-2xl md:text-3xl 2xl:text-3xl">
             {index + 1}
           </p>
-        </div>
+        </button>
       </div>
 
       {/* Text  */}
@@ -396,3 +392,5 @@ const Animation = {
   animationIterationCount: "1",
   animationFillMode: "backwards",
 };
+
+const useAutoNavigate = () => {};

@@ -18,7 +18,7 @@
       "title-mobile": ["Executive", "personal", "branding para", "C-suite"],
       "subtitle": "Tu marca, dirigida",
       "text": "Dirigimos la marca del C-Suite como activo estratégico del negocio. Con disciplina consultiva. Con grado fílmico",
-      "buttons": ["Agendar diagnostico", "Ver soluciones"]
+      "buttons": ["Agendar diagnóstico", "Ver casos"]
     },
     "section_introduction": {
       "title": ["Autoridad adentro. ", "Dirección ", "afuera"],
@@ -66,7 +66,7 @@
         ["Dirección", " continua"]
       ],
       "step_paragraphs": [
-        "Acompañamiento mensual para sostener la coherencia y dirigir la evolución del sistema.",
+        "Análisis de tu imagen pública como activo de negocio. Auditoría, calibración y mapa de oportunidades.",
         "Sistema de marca personal: posicionamiento, narrativa, sistema verbal y visual.",
         "Producción con grado fílmico: Brand Films, fotografía editorial y sistema de contenidos.",
         "Acompañamiento mensual para sostener la coherencia y dirigir la evolución del sistema."
@@ -85,32 +85,42 @@
     },
     "section_estrategic_cases": {
       "title_prologue": "Casos Estratégicos",
-      "title": ["Liderazgos ", "Dirigidos"],
+      "title": ["Liderazgos ", "dirigidos"],
+      "architect": "Arquitecto",
       "subtitle": ["Las ", "decisiones ", "prueban el método"],
-      "text": "Cada caso es un liderazgo C-Suite cuya maca personal opera como activo de negocio.",
+      "text": "Cada caso representa un liderazgo de nivel C-Suite cuya marca personal opera como un activo empresarial.",
       "view_all": "Ver todos los casos",
       "carousel_cards": {
-        "personal_branding": "Marca Personal",
-        "business_branding": "Marca Empresarial",
         "architect": "Arquitecto",
-        "cards_intros": [
-          "Construcción de una marca industrial con presencia regional y posicionamiento de clase mundial.",
-          "Identidad de alto nivel para un perfil de influencia y liderazgo nacional.",
-          "Evolución de identidad técnica hacia una marca de diseño y autoría propia.",
-          "Integración de legado e innovación para el liderazgo del mercado arquitectónico."
-        ],
-        "card_subtitles": [
-          "Parques industriales",
-          "Liderazgo empresarial",
-          "Arquitectura y diseño",
-          "Arquitectura residencial"
-        ],
-        "card_descriptions": [
-          "De operador regional a referente industrial de clase mundial.",
-          "Posicionamiento estratégico para influencia nacional.",
-          "Evolución de identidad técnica a marca de autoría.",
-          "Marca personal para referente del sector."
-        ],
+        "personal_branding": "Marca Personal",
+        "business_branding": "Marca Corporativa",
+        "card_intros": {
+          "pepe": "Arquitecto fundador con autoría propia en arquitectura residencial premium.",
+          "jgs": "Evolución de identidad técnica hacia una marca de diseño y autoría propia.",
+          "montes_oca": "Liderazgo empresarial mexicano con proyección nacional.",
+          "elite": "Construcción de una marca industrial con presencia regional y posicionamiento de clase mundial.",
+          "gaby": "Liderazgo empresarial en el sector de seguridad privada armada en México.",
+          "sophia": "Golfista profesional certificada por la LPGA y empresaria.",
+          "david": "Consultor estratégico en la industria de las fianzas en México."
+        },
+        "card_subtitles": {
+          "pepe": "Arquitectura residencial",
+          "jgs": "Arquitectura y diseño",
+          "montes_oca": "Liderazgo empresarial",
+          "elite": "Parques industriales",
+          "gaby": "Autoridad en el sector",
+          "sophia": "Golfista profesional",
+          "david": "Industria de fianzas"
+        },
+        "card_descriptions": {
+          "pepe": "Dirección de marca personal. Autoría editorial materializada como referente del sector arquitectónico.",
+          "jgs": "Evolución de una identidad técnica a marca de autoría.",
+          "montes_oca": "Dirección estratégica de marca personal. Activo de confianza en mercado, medios, y red ejecutiva.",
+          "elite": "De operador regional a referente industrial de clase mundial.",
+          "gaby": "Dirección de marca personal. Autoridad del sector reputación blindada y humanización estratégica del liderazgo.",
+          "sophia": "Dirección de marca personal. Autoridad del golf en México, alcance orgánico amplificado y receptividad para patrocinios y eventos",
+          "david": "Dirección de marca personal. Autoridad de la industria de fianzas en México, referencia primera del mercado y voz pública del liderazgo."
+        },
         "explore": "Explorar caso",
         "prev": "Anterior",
         "next": "Siguiente"
@@ -125,28 +135,48 @@
       "subtitle": "Comparte el contexto de tu marca. Con esa información definimos si hay una ruta estratégica para trabajar juntos",
       "socials": "También puedes escribirnos por:",
       "channels": "Otros canales de contacto",
-      "form_labels": {
-        "name": "Nombre",
-        "business_name": "Empresa / Proyecto",
-        "email": "Correo",
-        "brand_stage": "Etapa de tu marca",
-        "challenge": "¿Qué reto estratégico enfrentas?"
+      "form": {
+        "labels": {
+          "name": "Nombre",
+          "business_name": "Empresa / Proyecto",
+          "email": "Correo",
+          "role": "Tu posición actual",
+          "leadership": "¿Tu liderazgo sostiene también una marca empresarial?",
+          "motive": "¿Qué momento de carrera o negocio motiva esta conversación?"
+        },
+        "placeholders": {
+          "name": "Tu nombre completo",
+          "business_name": "Nombre de tu empresa",
+          "email": "tu@empresa.com",
+          "role": "Selecciona una opción",
+          "role_options": [
+            "CEO o fundador de empresa consolidada",
+            "C-Suite ejecutivo (CFO, COO, CMO, CTO)",
+            "Consultor/Director con responsabilidad protagónica",
+            "Profesional con autoridad sectorial demostrable",
+            "Otro perfil - describir en el siguiente campo"
+          ],
+          "leadership": "Selecciona una opción",
+          "leadership_options": [
+            "Solo mi marca personal",
+            "También una marca empresarial",
+            "Aún lo estoy evaluando"
+          ],
+          "motive": "Cuéntanos brevemente..."
+        },
+        "error": {
+          "nombre": "Favor de llenar el campo 'Nombre' correctamente. ",
+          "empresa": "Favor de llenar el campo 'Empresa / Proyecto' correctamente. ",
+          "correo": "Favor de llenar el campo 'Correo Electrónico' correctamente. ",
+          "rol": "Favor de llenar el campo 'Tu posición actual' correctamente. "
+        },
+        "button": "Cotizar diagnóstico",
+        "success": {
+          "title": "Recibimos tu contexto",
+          "paragraph": "El equipo de DNM evalúa la información compartida y responde en las próximas horas",
+          "accept": "Aceptar"
+        }
       },
-      "form_placeholders": {
-        "name": "Tu nombre completo",
-        "business_name": "Nombre de tu empresa",
-        "email": "tu@empresa.com",
-        "brand_stage": "Selecciona una opción",
-        "brand_stage_options": [
-          "Inicio / Pre-lanzamiento",
-          "Crecimiento Temprano",
-          "Expansión",
-          "Consolidación",
-          "Transformación | Reposicionamiento"
-        ],
-        "challenge": "Cuéntanos brevemente tu reto de marca..."
-      },
-      "form_button": "Iniciar conversación",
       "footer_text": "Todos los derechos reservados."
     },
     "section_footer": {
@@ -158,10 +188,15 @@
       "pre-title": "Consultoria y estrategia de marca",
       "title": ["Detrás de cada decision hay una ", "dirección."],
       "text": "Somos consultores de marca con un principio claro: pensar, definir y dirigir. En ese orden. Siempre.",
-      "buttons": ["Conoce a DNM", "Conoce al equipo"]
+      "buttons": ["Conoce a DNM", "Conoce al equipo"],
+      "footer": {
+        "meet_us": "Conoce a DNM",
+        "personal_branding": "Marca Personal",
+        "business_branding": "Marca Empresarial"
+      }
     },
     "section_whoAreWe": {
-      "pre-title": "Quienes somos",
+      "pre-title": "Quiénes somos",
       "title": ["Hacemos ", "Criterio. ", "Y de ahi", "marca"],
       "text": [
         "DNM ",
@@ -241,7 +276,7 @@
     "section_footer": {
       "title": ["Si tu marca necesita", "dirección", "conversemos"],
       "text": "Comparte el contexto de tu marca. Con esa información definimos si hay una ruta estratégica para trabajar juntos.",
-      "buttons": ["Explorar caso", "Casos estrategicos"],
+      "buttons": ["Agendar un diagnóstico", "Casos estrategicos"],
       "copyright": "Todos los derechos reservados."
     }
   },

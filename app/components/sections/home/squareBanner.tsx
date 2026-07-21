@@ -1,10 +1,17 @@
+"use client";
+import { useElementIntersectsScreen } from "@/app/hooks/useElementIntersectsScreen";
 import { useTranslations } from "next-intl";
+import { useRef } from "react";
 
 export const SquareBanner = () => {
   const t = useTranslations("home.section_square_banner");
 
+  // -------------------- Check when element enters the screen, trigger animations ------------------------------
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { intersecting } = useElementIntersectsScreen(containerRef);
+
   return (
-    <section id="section-about-us">
+    <section id="section-about-us" ref={containerRef}>
       <div
         className={`relative my-10 mx-auto h-fit text-white align-middle duration-500 w-full lg:w-1/2  `}
       >
@@ -31,23 +38,25 @@ export const SquareBanner = () => {
               <rect
                 id="banner-about-us-gradient-border-rect-template"
                 x="-10%"
-                y="30%"
+                y={intersecting ? "30%" : "50%"}
                 width="120%"
-                height="40%"
+                height={intersecting ? "40%" : "0%"}
                 strokeWidth="5"
                 fill="black"
                 stroke="none"
+                className="duration-1000 delay-500"
               />
               {/* vertical cut  */}
               <rect
                 id="banner-about-us-gradient-border-rect-template"
                 y="-10%"
-                x="10%"
-                width="80%"
+                x={intersecting ? "10%" : "50%"}
+                width={intersecting ? "80%" : "0%"}
                 height="120%"
                 strokeWidth="5"
                 fill="black"
                 stroke="none"
+                className="duration-1000 delay-500"
               />
             </mask>
           </defs>
@@ -78,8 +87,27 @@ export const SquareBanner = () => {
         </svg>
         {/* ------------------- Content ------------------- */}
         <div className="relative flex flex-col gap-5 md:px-20 py-10 rounded-2xl w-full h-full">
-          <h1 className="w-full text-center"> {t("title-prologue")} </h1>
-          <h2 className="w-full text-center">{t("title")}</h2>
+          <h1
+            className="w-full text-center duration-1000 delay-500"
+            style={
+              intersecting
+                ? {
+                    opacity: 1,
+                  }
+                : { opacity: 0 }
+            }
+          >
+            {t("title-prologue")}
+          </h1>
+          <h2
+            className="w-full text-center uppercase duration-1000 delay-700"
+            style={{
+              textTransform: "initial",
+              opacity: intersecting ? 1 : 0,
+            }}
+          >
+            {t("title")}
+          </h2>
         </div>
       </div>
     </section>

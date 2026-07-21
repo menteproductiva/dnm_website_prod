@@ -4,6 +4,7 @@ import { useState } from "react";
 import { WhatsApp } from "../../icons/icons";
 import { useLocale, useTranslations } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
+
 // Assets
 import isotipo from "@/public/branding/isotipo.svg";
 import usFlag from "@/public/icons/us.svg";
@@ -11,30 +12,71 @@ import mxFlag from "@/public/icons/mx.svg";
 import whatsappIcon from "@/public/icons/whatsapp.svg";
 import arrowUp from "@/public/icons/arrow-up.svg";
 import Link from "next/link";
+import { WhatsAppLink } from "@/app/constants/constants";
 
 export const Navbar = () => {
   const t = useTranslations("layout.section_navbar");
 
+  const locale = useLocale();
+  const isotipoLink = `/${locale}#hero-filler`;
+
   const OptionList = [
-    { name: "aboutUs", text: t("options.aboutUs"), href: "#section-about-us" },
-    { name: "method", text: t("options.method"), href: "#section-cases" },
-    { name: "cases", text: t("options.cases"), href: "#section-method" },
+    { name: "aboutUs", text: t("options.aboutUs"), href: `/about_us#hero` },
+    {
+      name: "method",
+      text: t("options.method"),
+      href: `/${locale}/#section-method`,
+    },
+    {
+      name: "cases",
+      text: t("options.cases"),
+      href: `/${locale}/#section-cases`,
+    },
     {
       name: "contact",
       text: t("options.contact"),
-      href: "#section-contact-form",
+      href: `/${locale}/#section-contact-form`,
     },
   ];
 
+  // -------------------- Isotype Link to hero --------------------
+  // When I use a plain "href='/#hero'" <Link> component, the page should scroll navigate back to home and scroll to hero
+  // In other website pages, it works properly
+  // However, when in home, it realizes we are already on the home page and does nothing, therefore it does NOT scroll back to hero
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const handleHeroClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    // Prevent the default anchor behavior so it doesn't cause a hard reload
+    e.preventDefault();
+
+    if (pathname === "/") {
+      // If already on home, find the section and scroll smoothly
+      const heroSection = document.getElementById("hero-filler");
+      if (heroSection) {
+        heroSection.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // If on any other page, navigate back to home
+      router.push("/");
+    }
+  };
+
   return (
-    <div className="top-0 left-0 z-50 fixed backdrop-blur-lg w-full h-20">
-      <NavbarMobile options={OptionList} />
-      <NavbarDesktop options={OptionList} />
+    <div className="top-0 left-0 z-50 fixed backdrop-blur-lg w-full h-15">
+      <NavbarMobile options={OptionList} isotipoLink={isotipoLink} />
+      <NavbarDesktop options={OptionList} isotipoLink={isotipoLink} />
     </div>
   );
 };
 
-const NavbarMobile = ({ options }: { options: any }) => {
+const NavbarMobile = ({
+  options,
+  isotipoLink,
+}: {
+  options: any;
+  isotipoLink: string;
+}) => {
   const [showMenu, setShowMenu] = useState(false);
   const handleMenuClick = () => {
     setShowMenu(!showMenu);
@@ -45,13 +87,15 @@ const NavbarMobile = ({ options }: { options: any }) => {
   return (
     <header className="lg:hidden left-0 z-10 absolute flex flex-row justify-between px-6 py-7 w-full text-white text-lg">
       {/* Icon  */}
-      <Image
-        src={isotipo}
-        alt="isotipo.svg"
-        height={40}
-        width={40}
-        className="my-auto w-auto h-7"
-      />
+      <Link href={isotipoLink}>
+        <Image
+          src={isotipo}
+          alt="isotipo.svg"
+          height={40}
+          width={40}
+          className="my-auto w-auto h-7"
+        />
+      </Link>
       {/* burger button  */}
       <svg
         className="p-1 border border-primary2-500 rounded-sm h-full"
@@ -116,13 +160,15 @@ const NavbarMobile = ({ options }: { options: any }) => {
           {/* >>>>> Top section <<<<<   */}
           <div className="z-10 flex flex-row justify-between px-6 py-7 w-full text-white text-lg">
             {/* Icon  */}
-            <Image
-              src={isotipo}
-              alt="isotipo.svg"
-              height={40}
-              width={40}
-              className="my-auto w-auto h-7"
-            />
+            <Link href={isotipoLink}>
+              <Image
+                src={isotipo}
+                alt="isotipo.svg"
+                height={40}
+                width={40}
+                className="my-auto w-auto h-7"
+              />
+            </Link>
             {/* close button  */}
             <svg
               className="p-1 border border-primary2-500 rounded-sm h-full cursor-pointer"
@@ -196,21 +242,24 @@ const NavbarButton = () => {
   );
 };
 
-const NavbarDesktop = ({ options }: { options: any }) => {
+const NavbarDesktop = ({
+  options,
+  isotipoLink,
+}: {
+  options: any;
+  isotipoLink: string;
+}) => {
   const t = useTranslations("layout.section_navbar");
+  const locale = useLocale();
 
   return (
-    <header className="hidden left-0 z-10 absolute lg:flex flex-row justify-between px-[100px] py-7 lg:py-2 2xl:py-4 w-full text-white 2xl:text-md text-lg">
+    <header className="hidden left-0 z-10 absolute lg:flex flex-row justify-between px-[100px] py-7 lg:py-2 2xl:py-2 w-full text-white 2xl:text-md text-lg">
       {/* -------------------- {left-side menu here} -------------------- */}
       {/* Icon  */}
-      <div className="flex flex-row lg:gap-5 text-white">
-        <Image
-          src={isotipo}
-          alt="isotipo.svg"
-          height={40}
-          width={40}
-          className=""
-        />
+      <div className="flex flex-row lg:gap-5 text-white pointer-cursor">
+        <Link href={isotipoLink} className="my-auto" scroll={true}>
+          <Image src={isotipo} alt="isotipo.svg" height={40} width={40} />
+        </Link>
 
         {/* Options  */}
         {options.map((option: any, index: number) => {
@@ -241,7 +290,8 @@ const WhatsAppButton = () => {
   // return <></>;
 
   return (
-    <div
+    <Link
+      href={WhatsAppLink}
       className={`flex cursor-pointer relative flex-row  duration-500 my-auto px-5 py-1   lg:border  2xl:border-2 rounded-full w-fit h-fit ${showAnimation ? "bg-green-500 border-green-500" : "bg-primary1-500 border-primary2-100"}`}
       onMouseEnter={() => {
         setShowAnimation(true);
@@ -266,7 +316,7 @@ const WhatsAppButton = () => {
         height={20}
         className={` my-auto ${!showAnimation ? "w-4 h-4 ml-2" : "w-0 h-0 ml-0"}`}
       />
-    </div>
+    </Link>
   );
 };
 

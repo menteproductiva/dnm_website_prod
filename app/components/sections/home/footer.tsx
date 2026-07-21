@@ -1,11 +1,11 @@
 "use client";
+import { currentYear } from "@/app/constants/constants";
 import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 
 export const Footer = () => {
   const [visiblePercentage, setVisiblePercentage] = useState(0);
   const footerRef = useRef(null);
-  const currentYear = new Date().getFullYear();
 
   useEffect(() => {
     const observer = new IntersectionObserver(

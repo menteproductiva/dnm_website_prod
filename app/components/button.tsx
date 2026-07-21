@@ -19,7 +19,7 @@ export const Button = ({
           className
         }
       >
-        <span className="my-auto">{text}</span>
+        <span className="my-auto uppercase">{text}</span>
         <ArrowRightUp
           strokeWidth={4}
           className="my-auto group-hover:-translate-y-2 group-hover:translate-x-2 duration-500"

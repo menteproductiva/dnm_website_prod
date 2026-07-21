@@ -18,11 +18,11 @@
       "title-mobile": ["Executive", "personal", "branding", "for C-suite"],
       "subtitle": "Your brand, directed",
       "text": "We manage C-Suite branding as an strategic business asset. With consultive discipline. With filmic grade",
-      "buttons": ["Book a diagnosis", "View solutions"]
+      "buttons": ["Book a diagnosis", "View cases"]
     },
 
     "section_introduction": {
-      "title": ["Authority within. ", "Direction ", "outside"],
+      "title": ["Authority within ", "Direction ", "outside"],
       "paragraph1": "Every strategic move by the C-Suite consolidates authority within the company. A directed personal brand turns it into a public asset: market trust, clarity for capital, and attraction of executive talent.",
       "bullet_points": {
         "titles": [
@@ -67,7 +67,7 @@
         ["Ongoing", " direction"]
       ],
       "step_paragraphs": [
-        "Monthly guidance to sustain consistency and direct the system's evolution.",
+        "Analysis of your public image as a business asset. Audit, calibration, and opportunity map.",
         "Personal brand system: positioning, narrative, verbal and visual system.",
         "Film-grade production: Brand Films, editorial photography, and content system.",
         "Monthly guidance to sustain consistency and direct the system's evolution."
@@ -86,32 +86,42 @@
     },
     "section_estrategic_cases": {
       "title_prologue": "Strategic Cases",
-      "title": ["Directed ", "Leaders"],
-      "subtitle": ["Decisions ", "prove ", "the method"],
-      "text": "Each case represents C-Suite leadership whose personal brand operates as a business asset.",
+      "title": ["Directed ", "Leadership"],
+      "architect": "Architect",
+      "subtitle": ["Decisions ", "demonstrate ", "the method"],
+      "text": "Each case represents C-Suite level leadership whose personal brand operates as a business asset.",
       "view_all": "View all cases",
       "carousel_cards": {
+        "architect": "Architect",
         "personal_branding": "Personal Branding",
         "business_branding": "Corporate Branding",
-        "architect": "Architect",
-        "cards_intros": [
-          "Building an industrial brand with a regional presence and world-class positioning.",
-          "High-level identity for a profile of national influence and leadership.",
-          "Evolution from a technical identity toward a signature and self-authored brand.",
-          "Integration of legacy and innovation for leadership in the architectural market."
-        ],
-        "card_subtitles": [
-          "Industrial parks",
-          "Business leadership",
-          "Architecture and design",
-          "Residential architecture"
-        ],
-        "card_descriptions": [
-          "From regional operator to world-class industrial benchmark.",
-          "Strategic positioning for national influence.",
-          "Evolution from technical identity to a signature brand.",
-          "Personal brand for an industry benchmark."
-        ],
+        "card_intros": {
+          "pepe": "Founding architect with signature authority in premium residential architecture.",
+          "jgs": "Evolution of technical identity towards a design and signature brand.",
+          "montes_oca": "Mexican business leadership with national projection.",
+          "elite": "Construction of an industrial brand with a regional presence and world-class positioning.",
+          "gaby": "Business leadership in the private armed security sector in Mexico.",
+          "sophia": "Professional golfer certified by the LPGA and entrepreneur.",
+          "david": "Strategic consultant in the surety bonds industry in Mexico."
+        },
+        "card_subtitles": {
+          "pepe": "Residential architecture",
+          "jgs": "Architecture and design",
+          "montes_oca": "Business leadership",
+          "elite": "Industrial parks",
+          "gaby": "Authority in the sector",
+          "sophia": "Professional golfer",
+          "david": "Surety bonds industry"
+        },
+        "card_descriptions": {
+          "pepe": "Personal brand management. Editorial authorship materialized as a benchmark in the architectural sector.",
+          "jgs": "Evolution from a technical identity to a signature brand.",
+          "montes_oca": "Strategic personal brand management. An asset of trust in the market, media, and executive network.",
+          "elite": "From regional operator to world-class industrial benchmark.",
+          "gaby": "Personal brand management. Sector authority, ironclad reputation, and strategic humanization of leadership.",
+          "sophia": "Personal brand management. Golf authority in Mexico, amplified organic reach, and receptivity for sponsorships and events.",
+          "david": "Personal brand management. Authority in the surety bonds industry in Mexico, prime market reference, and public voice of leadership."
+        },
         "explore": "Explore case",
         "prev": "Previous",
         "next": "Next"
@@ -126,28 +136,48 @@
       "subtitle": "Share your brand's context. With that information, we can determine if there is a strategic path for us to work together",
       "socials": "You can also write to us via:",
       "channels": "Other contact channels",
-      "form_labels": {
-        "name": "Name",
-        "business_name": "Company / Project",
-        "email": "Email",
-        "brand_stage": "Your brand's stage",
-        "challenge": "What strategic challenge are you facing?"
+      "form": {
+        "labels": {
+          "name": "Name",
+          "business_name": "Company / Project",
+          "email": "Email",
+          "role": "Your current position",
+          "leadership": "Does your leadership also support a corporate brand?",
+          "motive": "What current moment in your career or business is motivating this conversation?"
+        },
+        "placeholders": {
+          "name": "Your full name",
+          "business_name": "Name of your company",
+          "email": "you@company.com",
+          "role": "Select an option",
+          "role_options": [
+            "CEO or founder of an established company",
+            "C-Suite Executive (CFO, COO, CMO, CTO)",
+            "Consultant/Director with a leading role",
+            "Professional with demonstrable sector authority",
+            "Other profile - describe in the next field"
+          ],
+          "leadership": "Select an option",
+          "leadership_options": [
+            "Just my personal brand",
+            "Also a corporate brand",
+            "I am still evaluating it"
+          ],
+          "motive": "Tell us briefly..."
+        },
+        "error": {
+          "nombre": "Please fill out the 'Name' field correctly. ",
+          "empresa": "Please fill out the 'Company / Project' field correctly. ",
+          "correo": "Please fill out the 'Email' field correctly. ",
+          "rol": "Please fill out the 'Your current position' field correctly. "
+        },
+        "button": "Start conversation",
+        "success": {
+          "title": "We received your context",
+          "paragraph": "The DNM team is evaluating the shared information and will respond within the next few hours",
+          "accept": "Accept"
+        }
       },
-      "form_placeholders": {
-        "name": "Your full name",
-        "business_name": "Your company's name",
-        "email": "you@company.com",
-        "brand_stage": "Select an option",
-        "brand_stage_options": [
-          "Launch / Pre-launch",
-          "Early Growth",
-          "Expansion",
-          "Consolidation",
-          "Transformation / Repositioning"
-        ],
-        "challenge": "Briefly tell us about your brand challenge..."
-      },
-      "form_button": "Start conversation",
       "footer_text": "All rights reserved."
     },
     "section_footer": {
@@ -159,7 +189,12 @@
       "pre-title": "Brand consulting and strategy",
       "title": ["Behind every decision, there is a ", "direction."],
       "text": "We are brand consultants with a clear principle: think, define, and direct. In that order. Always.",
-      "buttons": ["Meet DNM", "Meet the team"]
+      "buttons": ["Meet DNM", "Meet the team"],
+      "footer": {
+        "meet_us": "Meet DNM",
+        "personal_branding": "Personal Branding",
+        "business_branding": "Business Branding"
+      }
     },
     "section_whoAreWe": {
       "pre-title": "Who we are",
@@ -223,7 +258,8 @@
     "section_OurClientsBanner": {
       "pre-title": "Companies & entrepreneurs",
       "title": "who trust us"
-    }
+    },
+    "section_footer": {}
   },
   "layout": {
     "section_navbar": {
@@ -239,9 +275,9 @@
       "languageBtn": "EN"
     },
     "section_footer": {
-      "title": ["If your brand needs", "direction,", "let's talk"],
+      "title": ["If your brand needs", " direction,", "let's talk"],
       "text": "Share your brand's context. With that information, we'll define if there is a strategic path for us to work together.",
-      "buttons": ["Explore case", "Strategic cases"],
+      "buttons": ["Book a diagnostic", "Strategic cases"],
       "copyright": "All rights reserved."
     }
   },

@@ -43,16 +43,18 @@ export const OurPhilosophy = () => {
   ];
 
   return (
-    <section className="relative flex flex-col justify-around items-center gap-7 xl:gap-9 bg-black mx-auto px-5 py-20 w-full h-full">
+    <section className="relative flex flex-col justify-around items-center gap-7 xl:gap-12 bg-black mx-auto px-5 md:px-0 py-20 w-full h-full">
       {/* ----------  Top ----------   */}
       <div className="flex flex-col gap-5 mx-auto w-3/5 text-white">
         <h1 className="w-full text-center">{t("pre-title")}</h1>
         <h2 className="w-full text-center">
-          <span className="">{t("title.0")}</span>
-          <span className="text-primary2-500">{t("title.1")}</span>
-          <span className="">{t("title.2")}</span>
+          <span className="md:text-5xl">{t("title.0")}</span>
+          <span className="text-primary2-500 md:text-5xl">{t("title.1")}</span>
+          <span className="md:text-5xl">{t("title.2")}</span>
         </h2>
-        <p className="w-full text-center">{t("sub-title")}</p>
+        <p className="w-full text-neutral2-500 text-xl text-center">
+          {t("sub-title")}
+        </p>
       </div>
 
       {/* ----------  Grid ----------   */}
@@ -94,14 +96,14 @@ const Card = ({
       />
 
       {icon}
-      <h3 className="relative flex flex-col pl-0 group-hover:pl-2 duration-500">
+      <h3 className="relative flex flex-col pl-0 group-hover:pl-2 md:text-xl duration-500">
         <span className="font-semibold"> {title}</span>
         <span className="font-semibold text-primary2-500">
           {titleHighlight}
         </span>
       </h3>
       <p className="relative flex flex-col pt-3">
-        <span className="h-20">{text}</span>
+        <span className="h-20 text-neutral2-500">{text}</span>
       </p>
 
       <p className="top-1/3 left-0 absolute bg-slate-500 rounded-r-2xl w-2 h-10 group-hover:h-14 duration-500" />

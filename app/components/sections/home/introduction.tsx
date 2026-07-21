@@ -83,7 +83,7 @@ export const Introduction = () => {
         className="flex flex-col gap-7 md:mr-auto w-full md:w-2/3 lg:w-3/5 text-neutral2-100"
         style={
           isIntersected
-            ? { ...AnimationA, animationDelay: "1s" }
+            ? { ...AnimationA, animationDelay: "0s" }
             : { opacity: 0 } // Keep element hidden till animation triggers
         }
       >
@@ -101,7 +101,7 @@ export const Introduction = () => {
           className="bg-primary2-500/30 h-full"
           style={
             isIntersected
-              ? { ...AnimationB, animationDelay: "2s" }
+              ? { ...AnimationB, animationDelay: "0.5s" }
               : { width: 0 }
           }
         />
@@ -112,7 +112,7 @@ export const Introduction = () => {
         className="flex lg:flex-row flex-col gap-10 mb-5 xl:mb-10 w-full h-1/3 text-white"
         style={
           isIntersected
-            ? { ...AnimationA, animationDelay: "3s" }
+            ? { ...AnimationA, animationDelay: "1s" }
             : { opacity: 0 }
         }
       >
@@ -132,7 +132,7 @@ export const Introduction = () => {
         className="flex xl:flex-row flex-col xl:justify-center gap-5 w-fit lg:w-2/3 font-bold text-2xl lg:text-4xl"
         style={
           isIntersected
-            ? { ...AnimationA, animationDelay: "4s" }
+            ? { ...AnimationA, animationDelay: "1.5s" }
             : { opacity: 0 }
         }
       >
@@ -144,7 +144,7 @@ export const Introduction = () => {
           className="w-full overflow-hidden lg:text-left text-center text-nowrap scroll-bar-none"
           style={
             isIntersected
-              ? { ...AnimationB, animationDelay: "5s" }
+              ? { ...AnimationB, animationDelay: "2s" }
               : { opacity: 0 }
           }
         >
@@ -172,7 +172,7 @@ const BulletPoint = ({
       <span className="bg-slate-900 p-2 border-2 border-primary2-500 rounded w-10 h-10 group-hover:-translate-y-2 duration-500 shrink-0">
         {icon}
       </span>
-      <span className="lg:my-auto w-full lg:h-fit font-bold text-xl lg:text-2xl xl:text-3xl">
+      <span className="lg:my-auto w-full lg:h-fit font-semibold text-xl lg:text-2xl xl:text-3xl">
         {title}
       </span>
       <span className="my-auto w-full lg:h-fit text-md text-neutral2-500 lg:text-lg">

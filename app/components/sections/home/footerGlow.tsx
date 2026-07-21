@@ -71,9 +71,9 @@ export const BannerGlow = () => {
           cy={`0`}
           r={"40%"}
           fill="url(#footerGlow)"
-          className="hidden md:block transition-all duration-500 ease-out"
+          className="hidden md:block transition-all ease-out"
           style={
-            intersecting && mouseIn
+            intersecting
               ? {
                   transform: `translateX(${element.xPct.toFixed(1)}%) translateY(${element.yPct.toFixed(
                     1,
@@ -84,7 +84,7 @@ export const BannerGlow = () => {
                   transform: `translateX(50%) translateY(40%)`,
                 }
           }
-          // opacity={mouseIn ? 1 : 0.5}
+          opacity={mouseIn ? 1 : 0.75}
         />
         <circle
           cx={`50%`}
@@ -123,7 +123,7 @@ export const BannerGlow = () => {
             className="mx-auto w-full md:w-2/3 overflow-hidden text-md text-slate-300 md:text-lg xl:text-xl 2xl:text-2xl text-center"
             style={
               intersecting
-                ? { ...AnimationGrowParameters, animationDelay: `${1}s` }
+                ? { ...AnimationGrowParameters, animationDelay: `${0.5}s` }
                 : { opacity: 0 }
             }
           >

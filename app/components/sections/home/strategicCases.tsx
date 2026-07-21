@@ -1,39 +1,18 @@
 "use client";
+
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { ArrowRightUp } from "../../icons/icons";
+import { useElementIntersectsScreen } from "@/app/hooks/useElementIntersectsScreen";
+import { useBreakpoint } from "@/app/hooks/useMediaQuery";
 
 export const StrategicCases = () => {
   const t = useTranslations("home.section_estrategic_cases");
 
-  // -------------------- Detect when element enters the screen --------------------
-  // Create a reference to link to the element in question
+  // -------------------- Animation when element enters the screen --------------------
   const sectionRef = useRef<HTMLDivElement>(null);
-  // Use a State hook to store the intersection status
-  const [isIntersected, setIsIntersected] = useState(false);
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        // Trigger when 50% of the component is visible
-        if (entry.isIntersecting) {
-          setIsIntersected(true);
-          // Once it triggers, we can stop observing
-          if (sectionRef.current) observer.unobserve(sectionRef.current);
-        }
-      },
-      {
-        threshold: 0.5, // 50% visibility
-      },
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-  // -------------------------------------------------------------------------------
+  const { intersecting } = useElementIntersectsScreen(sectionRef);
 
   const AnimationParameters = {
     transformOrigin: "50% 60%",
@@ -42,115 +21,150 @@ export const StrategicCases = () => {
     animationIterationCount: "1",
     animationFillMode: "backwards",
   };
+  // -------------------------------------------------------------------------------
 
   return (
     <section
-      className="flex flex-col gap-5 lg:gap-8 mx-auto py-10 mg:py-20 w-full overflow-hidden"
+      className="flex flex-col gap-5 lg:gap-12 mx-auto py-10 md:py-20 w-full overflow-hidden"
       ref={sectionRef}
     >
       {/* -------------------- Text content -------------------- */}
-      <div className="flex lg:flex-row flex-col justify-center items-center gap-5 m-auto px-5 w-full text-white">
-        {/* ----- Title ----- */}
+      <div className="flex flex-col justify-center items-center gap-5 m-auto px-5 w-full text-white">
+        {/*  Title Prologue  */}
+        <div className="w-full lg:w-4/5">
+          <h1 className="w-full lg:w-4/5">{t("title_prologue")}</h1>
+        </div>
         <div
-          className="flex flex-col gap-2 lg:gap-5 lg:w-2/5 text-left lg:text-left"
+          className="flex flex-row gap-2 lg:gap-5 w-full lg:w-4/5 text-left lg:text-left"
           style={
-            isIntersected
+            intersecting
               ? { ...AnimationParameters, animationDelay: "0s" }
               : { opacity: 0 } // Keep element hidden till animation triggers
           }
         >
-          <h1 className="">{t("title_prologue")}</h1>
-          <h2 className="mx-auto w-3/4 lg:w-full">
-            <span className="text-primary2-500">{t("title.0")}</span>
-            <span className="text-white">{t("title.1")}</span>
+          <h2 className="p-0 w-3/4 lg:w-full h-min">
+            <p className="p-0 h-min text-primary2-500">{t("title.0")}</p>
+            <p className="h-min text-white">{t("title.1")}</p>
           </h2>
-        </div>
-        {/* ----- Paragraph ----- */}
-        <div
-          className="flex flex-col gap-2 lg:gap-5 lg:w-2/5"
-          style={
-            isIntersected
-              ? { ...AnimationParameters, animationDelay: "1s" }
-              : { opacity: 0 } // Keep element hidden till animation triggers
-          }
-        >
-          <p className="w-full text-neutral1-500 text-lg lg:text-2xl">
-            <span className="">{t("subtitle.0")}</span>
-            <span className="text-primary2-500">{t("subtitle.1")}</span>
-            <span className="">{t("subtitle.2")}</span>
-          </p>
-          <p className="w-full text-white/70">{t("text")}</p>
+          {/* ----- Paragraph ----- */}
+          <div
+            className="flex flex-col gap-2 lg:gap-5 pt-2 lg:w-4/5"
+            style={
+              intersecting
+                ? { ...AnimationParameters, animationDelay: ".5s" }
+                : { opacity: 0 } // Keep element hidden till animation triggers
+            }
+          >
+            <p className="w-full text-neutral1-500 text-lg lg:text-2xl">
+              <span className="">{t("subtitle.0")}</span>
+              <span className="text-primary2-500">{t("subtitle.1")}</span>
+              <span className="">{t("subtitle.2")}</span>
+            </p>
+            <p className="w-full text-neutral2-500 lg:text-xl">{t("text")}</p>
+          </div>
         </div>
       </div>
-      {/* -------------------- View all cases -------------------- */}
-      <p
-        className="group flex flex-row items-center gap-3 xl:gap-3 hover:bg-slate-200/10 ml-auto px-5 rounded text-white duration-500 cursor-pointer"
-        style={
-          isIntersected
-            ? { ...AnimationParameters, animationDelay: "2s" }
-            : { opacity: 0 } // Keep element hidden till animation triggers
-        }
-      >
-        <span className="ml-auto group-hover:text-primary2-500 text-lg md:text-xl lg:text-xl text-right duration-500">
-          {t("view_all")}
-        </span>
-        <ArrowRightUp
-          className="my-auto w-4 h-4 group-hover:-translate-y-1 group-hover:translate-x-1 duration-500"
-          color="var(--color-primary2-500)"
-        />
-      </p>
 
       {/* -------------------- Carousel -------------------- */}
       <div
+        className="w-full -red-500"
         style={
-          isIntersected
-            ? { ...AnimationParameters, animationDelay: "2.5s" }
+          intersecting
+            ? { ...AnimationParameters, animationDelay: "1s" }
             : { opacity: 0 } // Keep element hidden till animation triggers
         }
       >
-        <CarouselMobile />
-        <CarouselTablet />
-        <CarouselDesktop />
+        <Carousel />
       </div>
     </section>
   );
 };
 
-const CarouselMobile = () => {
+// Not scrollable
+const Carousel = () => {
+  // -------------------- Manage current langauge --------------------
   const t = useTranslations("home.section_estrategic_cases.carousel_cards");
-  const [currentSlide, setCurrentSlide] = useState(0);
+  // -------------------------------------------------------------------------------
 
-  const slides = [
+  // -------------------- List of Carousel Cards Content --------------------
+  const carouselCards = [
+    {
+      link: "/",
+      title: `${t(`architect`)} José Garnica`,
+      logo: null,
+      branding: t("personal_branding"),
+      background_image: "/cases/background_garnica1.png",
+      intro: t("card_intros.pepe"),
+      subtitle: t("card_subtitles.pepe"),
+      description: t("card_descriptions.pepe"),
+    },
     {
       link: "/",
       title: null,
-      logo: "cases/elite_logo.svg",
+      logo: "cases/logo_jgs.svg",
       branding: t("business_branding"),
-      background_image: "cases/background_elite1.png",
+      background_image: "/cases/background_jgs1.png",
+      intro: t("card_intros.jgs"),
+      subtitle: t("card_subtitles.jgs"),
+      description: t("card_descriptions.jgs"),
+    },
+
+    {
+      link: "/",
+      title: `Gabriela Torres`,
+      logo: null,
+      branding: t("personal_branding"),
+      background_image: "/cases/background_gaby.png",
+      intro: t("card_intros.gaby"),
+      subtitle: t("card_subtitles.gaby"),
+      description: t("card_descriptions.gaby"),
+    },
+
+    {
+      link: "/",
+      title: null,
+      logo: "/cases/logo_elite.svg",
+      background_image: "/cases/background_elite1.png",
+      branding: t("business_branding"),
+      intro: t("card_intros.elite"),
+      subtitle: t("card_subtitles.elite"),
+      description: t("card_descriptions.elite"),
     },
     {
       link: "/",
       title: "Luis Montes de Oca",
-      logo: "",
+      logo: null,
       branding: t("personal_branding"),
-      background_image: "cases/background_montes1.png",
+      background_image: "/cases/background_montes1.png",
+      intro: t("card_intros.montes_oca"),
+      subtitle: t("card_subtitles.montes_oca"),
+      description: t("card_descriptions.montes_oca"),
     },
     {
       link: "/",
-      title: null,
-      logo: "cases/jgs_logo.svg",
-      branding: t("business_branding"),
-      background_image: "cases/background_jgs1.png",
+      title: `Sophia Sheridan`,
+      logo: null,
+      branding: t("personal_branding"),
+      background_image: "/cases/background_sophia.png",
+      intro: t("card_intros.sophia"),
+      subtitle: t("card_subtitles.sophia"),
+      description: t("card_descriptions.sophia"),
     },
     {
       link: "/",
-      title: `${t(`architect`)} José Garnica`,
-      logo: "",
+      title: `David Elias`,
+      logo: null,
       branding: t("personal_branding"),
-      background_image: "cases/background_garnica1.png",
+      background_image: "/cases/background_david.png",
+      intro: t("card_intros.david"),
+      subtitle: t("card_subtitles.david"),
+      description: t("card_descriptions.david"),
     },
   ];
+  // -------------------------------------------------------------------------------
 
+  // -------------------- Handle Carousel Navigation --------------------
+  const [currentSlide, setCurrentSlide] = useState(0);
   const handlePrev = () => {
     if (currentSlide < 1) {
       setCurrentSlide(0);
@@ -159,157 +173,56 @@ const CarouselMobile = () => {
     setCurrentSlide(currentSlide - 1);
   };
   const handleNext = () => {
-    if (currentSlide > 2) {
-      setCurrentSlide(3);
+    if (size === "sm" && currentSlide > carouselCards.length - 1) {
+      setCurrentSlide(carouselCards.length - 1);
       return;
+    } else if (size === "md" && currentSlide > carouselCards.length - 3) {
+      return;
+    } else if (size === "lg" && currentSlide > carouselCards.length - 5) {
+      return;
+    } else {
+      setCurrentSlide(currentSlide + 1);
     }
-    setCurrentSlide(currentSlide + 1);
   };
+  // -------------------------------------------------------------------------------
+
+  // -------------------- Handle Carousel Responsiveness --------------------
+  const size = useBreakpoint();
+  let blockButtonNext = false;
+  if (size === "sm" && currentSlide >= carouselCards.length - 1) {
+    blockButtonNext = true;
+  } else if (size === "md" && currentSlide >= carouselCards.length - 2) {
+    blockButtonNext = true;
+  } else if (size === "lg" && currentSlide >= carouselCards.length - 4) {
+    blockButtonNext = true;
+  }
+  // -------------------------------------------------------------------------------
 
   return (
-    <div className="md:hidden relative flex flex-col gap-5 px-5 md:px-0 lg:px-10">
+    <div className="relative flex flex-col gap-5 w-full overflow-hidden -blue-500">
       <div
-        className="flex flex-row gap-5 md:gap-0 w-min md:w-full overflow-x-visible duration-500"
+        className={`flex flex-row gap-0  overflow-x-visible duration-500 w-[700%] md:w-[350%] lg:w-[175%]`}
         style={{
-          transform: `translateX(-${currentSlide * 25}%)`,
+          transform: `translateX(-${currentSlide * (100 / carouselCards.length)}%)`,
         }}
       >
         {/* -------------------- Carousel Cards --------------------  */}
-        {slides.map((slide, index) => (
+        {carouselCards.map((slide, index) => (
           <div
             key={`method-card-${index}`}
-            className="relative w-[85vw] aspect-2/3 transition-transform duration-500 ease-in-out shrink-0 md:shrink"
+            className={`relative aspect-2/4 transition-transform duration-500 ease-in-out `}
+            style={{ width: `${100 / carouselCards.length}%` }}
           >
             <CarouselCard
               // Card Cover
               title={slide.title}
               logo={slide.logo}
-              intro={t(`cards_intros.${index}`)}
+              intro={slide.intro}
               branding_type={slide.branding}
               background_image={slide.background_image}
               // Card Body
-              subtitle={t(`card_subtitles.${index}`)}
-              description={t(`card_descriptions.${index}`)}
-              explore_text={t(`explore`)}
-              link={slide.link}
-            />
-          </div>
-        ))}
-      </div>
-      {/* -------------------- Carousel Slider --------------------  */}
-      <div className="md:hidden flex flex-row justify-center gap-2 bg-green-500/0">
-        <p
-          onClick={handlePrev}
-          className={`flex flex-row gap-2 duration-500 cursor-pointer ${currentSlide == 0 ? "opacity-50 pointer-events-none" : ""}`}
-        >
-          <Image
-            src={"/icons/arrow-up.svg"}
-            width={15}
-            height={15}
-            alt="previous"
-            className="my-auto rotate-90"
-          />
-          <span>{t("prev")} </span>
-        </p>
-        {slides.map((_, index) => (
-          <CarouselStep
-            key={`method-carousel-${index}`}
-            index={index}
-            step={currentSlide}
-            setStep={setCurrentSlide}
-          />
-        ))}
-        <p
-          onClick={handleNext}
-          className={`flex flex-row gap-2 duration-500 cursor-pointer ${currentSlide == slides.length - 1 ? "opacity-50 pointer-events-none" : ""}`}
-        >
-          {t("next")}
-          <Image
-            src={"/icons/arrow-up.svg"}
-            width={15}
-            height={15}
-            alt="previous"
-            className={`my-auto -rotate-90 `}
-          />
-        </p>
-      </div>
-    </div>
-  );
-};
-const CarouselTablet = () => {
-  const t = useTranslations("home.section_estrategic_cases.carousel_cards");
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const slides = [
-    {
-      link: "/",
-      title: null,
-      logo: "cases/elite_logo.svg",
-      branding: t("business_branding"),
-      background_image: "cases/background_elite1.png",
-    },
-    {
-      link: "/",
-      title: "Luis Montes de Oca",
-      logo: "",
-      branding: t("personal_branding"),
-      background_image: "cases/background_montes1.png",
-    },
-    {
-      link: "/",
-      title: null,
-      logo: "cases/jgs_logo.svg",
-      branding: t("business_branding"),
-      background_image: "cases/background_jgs1.png",
-    },
-    {
-      link: "/",
-      title: `${t(`architect`)} José Garnica`,
-      logo: "",
-      branding: t("personal_branding"),
-      background_image: "cases/background_garnica1.png",
-    },
-  ];
-
-  const handlePrev = () => {
-    if (currentSlide < 1) {
-      setCurrentSlide(0);
-      return;
-    }
-    setCurrentSlide(currentSlide - 1);
-  };
-  const handleNext = () => {
-    if (currentSlide > 1) {
-      setCurrentSlide(2);
-      return;
-    }
-    setCurrentSlide(currentSlide + 1);
-  };
-
-  return (
-    <div className="hidden lg:hidden relative md:flex flex-col gap-5 px-5 md:px-0 lg:px-10">
-      <div
-        className="flex flex-row gap-0 w-[200vw] overflow-x-visible duration-500"
-        style={{
-          transform: `translateX(-${currentSlide * 50}%)`,
-        }}
-      >
-        {/* -------------------- Carousel Cards --------------------  */}
-        {slides.map((slide, index) => (
-          <div
-            key={`method-card-${index}`}
-            className="relative w-full aspect-2/3 transition-transform duration-500 ease-in-out shrink-0 md:shrink"
-          >
-            <CarouselCard
-              // Card Cover
-              title={slide.title}
-              logo={slide.logo}
-              intro={t(`cards_intros.${index}`)}
-              branding_type={slide.branding}
-              background_image={slide.background_image}
-              // Card Body
-              subtitle={t(`card_subtitles.${index}`)}
-              description={t(`card_descriptions.${index}`)}
+              subtitle={slide.subtitle}
+              description={slide.description}
               explore_text={t(`explore`)}
               link={slide.link}
             />
@@ -318,7 +231,7 @@ const CarouselTablet = () => {
       </div>
       {/* -------------------- Carousel Slider --------------------  */}
       <div className="flex flex-row justify-center gap-2 bg-green-500/0">
-        <p
+        <button
           onClick={handlePrev}
           className={`flex flex-row gap-2 duration-500 cursor-pointer ${currentSlide == 0 ? "opacity-50 pointer-events-none" : ""}`}
         >
@@ -330,23 +243,22 @@ const CarouselTablet = () => {
             className="my-auto rotate-90"
           />
           <span>{t("prev")} </span>
-        </p>
+        </button>
 
-        <CarouselStep
-          key={`method-carousel-${0}`}
-          index={0}
-          step={currentSlide}
-          setStep={setCurrentSlide}
-        />
-        <CarouselStep
-          key={`method-carousel-${1}`}
-          index={1}
-          step={currentSlide}
-          setStep={setCurrentSlide}
-        />
-        <p
+        <div className="flex flex-row justify-center gap-1 bg-green-500/0">
+          {carouselCards.map((_, index) => (
+            <CarouselStep
+              key={`method-carousel-${index}`}
+              index={index}
+              step={currentSlide}
+              setStep={setCurrentSlide}
+              size={size}
+            />
+          ))}
+        </div>
+        <button
           onClick={handleNext}
-          className={`flex flex-row gap-2 duration-500 cursor-pointer ${currentSlide == 2 - 1 ? "opacity-50 pointer-events-none" : ""}`}
+          className={`flex flex-row gap-2 duration-500 cursor-pointer ${blockButtonNext ? "opacity-50 pointer-events-none" : ""}`}
         >
           {t("next")}
           <Image
@@ -356,69 +268,7 @@ const CarouselTablet = () => {
             alt="previous"
             className={`my-auto -rotate-90 `}
           />
-        </p>
-      </div>
-    </div>
-  );
-};
-const CarouselDesktop = () => {
-  const t = useTranslations("home.section_estrategic_cases.carousel_cards");
-
-  const slides = [
-    {
-      link: "/",
-      title: null,
-      logo: "cases/elite_logo.svg",
-      branding: t("business_branding"),
-      background_image: "cases/background_elite1.png",
-    },
-    {
-      link: "/",
-      title: "Luis Montes de Oca",
-      logo: "",
-      branding: t("personal_branding"),
-      background_image: "cases/background_montes1.png",
-    },
-    {
-      link: "/",
-      title: null,
-      logo: "cases/jgs_logo.svg",
-      branding: t("business_branding"),
-      background_image: "cases/background_jgs1.png",
-    },
-    {
-      link: "/",
-      title: `${t(`architect`)} José Garnica`,
-      logo: "",
-      branding: t("personal_branding"),
-      background_image: "cases/background_garnica1.png",
-    },
-  ];
-
-  return (
-    <div className="relative flex flex-col gap-5">
-      <div className="hidden lg:flex flex-row gap-0 w-full">
-        {/* -------------------- Carousel Cards --------------------  */}
-        {slides.map((slide, index) => (
-          <div
-            key={`method-card-${index}`}
-            className="relative md:w-full aspect-2/3 transition-transform duration-500 ease-in-out shrink-0 md:shrink"
-          >
-            <CarouselCard
-              // Card Cover
-              title={slide.title}
-              logo={slide.logo}
-              intro={t(`cards_intros.${index}`)}
-              branding_type={slide.branding}
-              background_image={slide.background_image}
-              // Card Body
-              subtitle={t(`card_subtitles.${index}`)}
-              description={t(`card_descriptions.${index}`)}
-              explore_text={t(`explore`)}
-              link={slide.link}
-            />
-          </div>
-        ))}
+        </button>
       </div>
     </div>
   );
@@ -428,17 +278,33 @@ const CarouselStep = ({
   index,
   step,
   setStep,
+  size,
 }: {
   index: number;
   step: number;
   setStep: any;
+  size: string;
 }) => {
+  let isActive = false;
+  if (size === "sm" && step == index) {
+    isActive = true;
+  } else if (size === "md" && (step === index || index === step + 1)) {
+    isActive = true;
+  } else if (
+    size === "lg" &&
+    (step === index ||
+      index === step + 1 ||
+      index === step + 2 ||
+      index === step + 3)
+  ) {
+    isActive = true;
+  }
   return (
     <div
       onClick={() => {
         setStep(index);
       }}
-      className={`rounded-full h-1.5 my-auto duration-500 ${step == index ? "w-20 bg-primary2-500 " : "w-10 bg-slate-500/40  "}`}
+      className={`rounded-full h-1.5 my-auto duration-500 ${isActive ? "w-10 bg-primary2-500 " : "w-5 bg-slate-500/40  "}`}
     />
   );
 };
@@ -472,19 +338,22 @@ const CarouselCard = ({
     <div className="group relative w-full h-full overflow-hidden text-white align-middle">
       {/* -------------------- Background Image --------------------  */}
       <Image
-        src={`/${background_image}`}
+        src={`${background_image}`}
         width={1000}
         height={1000}
         alt={`background-image-${link}`}
-        className="top-0 absolute group-hover:blur-xs group-hover:grayscale-100 w-full h-full group-hover:scale-110 duration-500"
+        className="top-0 absolute group-hover:blur-xs group-hover:brightness-[.35] group-hover:grayscale-100 w-full h-full group-hover:scale-110 duration-500"
         style={{ objectFit: "cover" }}
       />
       {/* -------------------- Cover --------------------  */}
       <div className="top-0 relative bg-linear-to-b from-black via-transparent to-transparent group-hover:opacity-0 p-5 md:p-2 lg:p-5 h-full duration-500 pointer-events-none">
+        {/* Black Gradient  */}
+        <div className="top-0 left-0 absolute bg-linear-to-b from-black via-black to-transparent w-full h-20" />
+
         {/* Title | Logo  */}
-        <div className="flex flex-col items-start w-full h-16">
+        <div className="relative flex flex-col items-start mb-2 w-full h-16">
           {title && (
-            <p className="flex flex-col gap-2 w-full md:text-md text-lg lg:text">
+            <p className="flex flex-col gap-2 my-auto w-full md:text-md text-lg lg:text">
               <span className="font-bold">{title}</span>
             </p>
           )}
@@ -494,14 +363,14 @@ const CarouselCard = ({
               src={logo}
               width={250}
               height={250}
-              alt={`logo-${link}`}
-              className="mr-auto w-auto h-full"
+              alt={`logo-${logo}`}
+              className="mr-auto p-2 w-auto h-full"
             />
           )}
         </div>
         {/* Subtitle  */}
-        <div className="w-full">
-          <p className="flex flex-col gap-2 w-full md:text-md text-sm">
+        <div className="relative w-full">
+          <p className="flex flex-col gap-2 w-full text-sm">
             <span>{intro}</span>
           </p>
         </div>
@@ -509,36 +378,39 @@ const CarouselCard = ({
 
       {/* -------------------- Hover Info --------------------  */}
       <div
-        className={`top-0 cursor-pointer absolute flex flex-col gap-5 group-hover:opacity-100 opacity-0 bg-black/70  p-7 w-full h-full duration-500 justify-evenly `}
+        className={`top-0 text-neutral2-500 cursor-pointer absolute flex flex-col gap-10 group-hover:opacity-100 opacity-0  p-7 py-20 my-auto h-full duration-500 justify-center `}
       >
         {/* Branding Category  */}
-        <p className="w-full text-md text-primary2-400 text-center uppercase">
+        <p className="w-full text-primary2-500 text-2xl text-center uppercase">
           <span>{branding_type}</span>
         </p>
-        {/* Title | Logo  */}
-        <div className="flex mx-auto w-4/5 h-20">
-          {title && (
-            <p className="flex flex-col gap-2 my-auto w-full font-bold text-lg md:text-xl text-center">
-              <span>{title}</span>
-            </p>
-          )}
 
-          {logo && (
-            <Image
-              src={logo}
-              width={250}
-              height={250}
-              alt={`logo-${link}`}
-              className="my-auto h-20"
-              style={{ objectFit: "contain" }}
-            />
-          )}
-        </div>
-        {/* Subtitle  */}
-        <div className="w-full">
-          <p className="flex flex-col gap-2 w-full text-md text-slate-200 md:text-lg">
-            <span className="w-full text-center">{subtitle}</span>
-          </p>
+        <div className="flex flex-col gap-3">
+          {/* Title | Logo  */}
+          <div className="flex mx-auto w-4/5">
+            {title && (
+              <p className="flex flex-col gap-2 my-auto w-full font-bold text-lg md:text-3xl text-center">
+                <span>{title}</span>
+              </p>
+            )}
+
+            {logo && (
+              <Image
+                src={logo}
+                width={250}
+                height={250}
+                alt={`logo-${logo}`}
+                className="my-auto h-20"
+                style={{ objectFit: "contain" }}
+              />
+            )}
+          </div>
+          {/* Subtitle  */}
+          <div className="w-full">
+            <p className="flex flex-col gap-2 w-full text-md md:text-lg">
+              <span className="w-full text-center">{subtitle}</span>
+            </p>
+          </div>
         </div>
 
         <div className="w-full">
@@ -546,17 +418,6 @@ const CarouselCard = ({
             <span className="w-full text-center">{description}</span>
           </p>
         </div>
-
-        {/* -------------------- Button --------------------  */}
-        {/* <p className="group flex flex-row justify-center gap-3 bg-slate-950 hover:bg-primary2-500 px-5 lg:px-7 py-3 border-2 border-primary2-500 rounded-xl w-auto md:text-xs duration-500 cursor-pointer">
-          <span className="w-auto lg:font-normal font-bold md:text-sm lg:text-sm text-lg line-clamp-1">
-            {explore_text}
-          </span>
-          <span className="my-auto">
-            <ArrowRightUp className="hidden lg:block" size={10} />
-            <ArrowRightUp className="lg:hidden" size={15} />
-          </span>
-        </p> */}
       </div>
     </div>
   );

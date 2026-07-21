@@ -51,7 +51,7 @@ const Carousel = () => {
     {
       link: "/elite",
       title: null,
-      logo: "cases/elite_logo.svg",
+      logo: "cases/logo_elite.svg",
       branding: t("business_branding"),
       background_image: "cases/background_elite.png",
     },
@@ -65,7 +65,7 @@ const Carousel = () => {
     {
       link: "/jgs",
       title: null,
-      logo: "cases/jgs_logo.svg",
+      logo: "cases/logo_jgs.svg",
       branding: t("business_branding"),
       background_image: "cases/background_jgs.png",
     },

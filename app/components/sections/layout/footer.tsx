@@ -1,18 +1,24 @@
 "use client";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { SectionSeparator } from "../../sectionSeparator";
 import Link from "next/link";
-import { ArrowRightUp, Instagram, WhatsApp } from "../../icons/icons";
+import {
+  ArrowRightUp,
+  Email,
+  Instagram,
+  Tiktok,
+  WhatsApp,
+} from "../../icons/icons";
+import { currentYear, WhatsAppLink } from "@/app/constants/constants";
 
 export const Footer = () => {
   const [visiblePercentage, setVisiblePercentage] = useState(0);
   const footerRef = useRef(null);
-  const currentYear = new Date().getFullYear();
 
   const buttonsDesign =
-    "flex flex-row justify-center items-center gap-2 px-5 py-2 rounded-xl w-full lg:w-2/5 ";
+    "flex flex-row group justify-center duration-500 items-center gap-2 py-5 px-13 rounded-xl w-full lg:w-auto ";
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -28,6 +34,7 @@ export const Footer = () => {
 
     return () => observer.disconnect();
   }, []);
+  const socialsClassname = `p-2 duration-500 rounded-full relative overflow-hidden group `;
 
   const t = useTranslations("layout.section_footer");
   return (
@@ -36,7 +43,7 @@ export const Footer = () => {
       ref={footerRef}
     >
       {/* -------------------- CONTENT  -------------------- */}
-      <div className="z-10 relative flex flex-col gap-10 px-5 py-20 w-full lg:w-2/4 text-white">
+      <div className="z-10 relative flex flex-col gap-10 px-5 py-20 w-full lg:w-3/5 text-white">
         {/* Title  */}
         <div className="flex flex-col justify-between items-center gap-5 text-center">
           <Image
@@ -45,27 +52,39 @@ export const Footer = () => {
             width={100}
             height={100}
           />
-          <h2>
-            {t("title.0")}
-            <span className="text-primary2-500">{t("title.1")} </span>
-            {t("title.2")}
+          <h2 className="">
+            <span className="text-6xl">{t("title.0")} </span>
+            <span className="text-primary2-500 text-6xl">{t("title.1")} </span>
+            <span className="text-6xl">{t("title.2")}</span>
           </h2>
 
-          <p>{t("text")}</p>
+          <p className="text-neutral2-500 md:text-xl">{t("text")}</p>
         </div>
         {/*  BUTTONS   */}
         <div className="flex lg:flex-row flex-col justify-around gap-2 uppercase">
-          <Link href="/" className={buttonsDesign + " bg-green-500 "}>
-            <WhatsApp />
-            <span className="ml-2">Explorar caso</span>
+          <Link
+            // href={strategicCasesLink}
+            href={WhatsAppLink}
+            className={buttonsDesign + " bg-green-500 hover:bg-green-600 "}
+          >
+            <WhatsApp className="group-hover:-translate-y-2 duration-500" />
+            <span className="ml-2">{t("buttons.0")}</span>
           </Link>
 
           <Link
             href="/#section-cases"
-            className={buttonsDesign + " border-2 border-primary2-500"}
+            className={
+              buttonsDesign +
+              " border-2 border-primary2-500 hover:bg-primary2-500 "
+            }
           >
-            <span className="ml-2">Casos estrategicos</span>
-            <ArrowRightUp size={15} strokeWidth={4} />
+            <span className="ml-2">{t("buttons.1")}</span>
+
+            <ArrowRightUp
+              size={15}
+              strokeWidth={4}
+              className="group-hover:-translate-y-2 group-hover:translate-x-2 duration-500"
+            />
           </Link>
         </div>
       </div>
@@ -100,6 +119,7 @@ export const Footer = () => {
           className="duration-500"
         />
       </svg>
+
       {/* Gradient decorator */}
       <div
         className={` bg-linear-to-r from-black via-primary2-500 to-black  h-1 w-full `}
@@ -111,13 +131,50 @@ export const Footer = () => {
             &copy; {currentYear} DNM. {t("copyright")}
           </p>
 
-          <Link
-            href="/"
-            className="flex flex-row justify-end items-center gap-2 text-center"
-          >
-            <Instagram />
-            Instagram
-          </Link>
+          <div className="flex flex-row gap-7">
+            <Link
+              className={socialsClassname + " "}
+              href="https://www.instagram.com/dnm.mx/"
+            >
+              <div className="top-0 left-0 absolute bg-linear-to-b from-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 w-full h-full duration-500" />
+              <Instagram
+                color="#fff"
+                size={20}
+                strokeWidth={0.5}
+                className="relative"
+              />
+            </Link>
+            <Link className={socialsClassname + ""} href={WhatsAppLink}>
+              <div className="top-0 left-0 absolute bg-linear-to-b from-green-400 to-green-700 opacity-0 group-hover:opacity-100 w-full h-full duration-500" />
+
+              <WhatsApp
+                color="#fff"
+                size={20}
+                strokeWidth={0.5}
+                className="relative"
+              />
+            </Link>
+            <Link
+              className={socialsClassname + " "}
+              href="https://www.tiktok.com/@dnm.mx?_r=1&_t=ZS-97oZc3ViYcR"
+            >
+              <div className="top-0 left-0 absolute bg-linear-to-b from-cyan-500 to-red-500 opacity-0 group-hover:opacity-100 w-full h-full duration-500" />
+              <Tiktok
+                color="#fff"
+                size={20}
+                strokeWidth={5}
+                className="relative"
+              />
+            </Link>
+
+            <Link
+              className={socialsClassname + " "}
+              href="mailto:contacto@agenciadnm.com"
+            >
+              <div className="top-0 left-0 absolute bg-linear-to-b from-primary2-400 to-primary2-700 opacity-0 group-hover:opacity-100 w-full h-full duration-500" />
+              <Email color="#fff" size={20} className="relative" />
+            </Link>
+          </div>
         </div>
       </div>
     </div>
